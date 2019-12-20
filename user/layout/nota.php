@@ -4,7 +4,11 @@ id_pelanggan=pelanggan.id_pelanggan WHERE pembelian.id_pembelian='$_GET[id]'");
 $detail = mysqli_fetch_assoc($db);
 ?>
 
+<<<<<<< HEAD
 <div class="hero-wrap hero-bread" style="background-image: url('assets/images/bg_6.jpg');">
+=======
+<div class="hero-wrap hero-bread" style="background-image: url('assets/images/background_3.jpg');">
+>>>>>>> add-payment
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -19,6 +23,7 @@ $detail = mysqli_fetch_assoc($db);
 	<div class="main-content-inner">
                 <div class="row">
                     <div class="col-lg-12 mt-5">
+<<<<<<< HEAD
 					<strong>
                         <?php echo $detail['nama_pelanggan'];?>
                     </strong>
@@ -36,6 +41,29 @@ $detail = mysqli_fetch_assoc($db);
                         Total   : <?php echo $detail['total_pembelian'];?>
                     </p>
                             <div class="card-body">
+=======
+                            <div class="card-body">
+                                    <strong>
+                                        <h4><?php echo $detail['nama_pelanggan'];?></h4>
+                                    </strong>
+
+                                    <p>
+                                        <?php echo $detail['nohp_pelanggan'];?>
+                                        <br>
+                                        <?php echo $detail['email_pelanggan'];?>
+                                    </p>
+
+
+                                    <p>
+                                        Tanggal : <?php echo $detail['tanggal_pembelian'];?>
+                                        <br>
+                                        Total   : Rp. <?php echo number_format($detail['total_pembelian']);?>
+                                    </p>
+
+                                    <p>
+                                        Status : <?php echo $detail['status_pembelian'];?>
+                                    </p>
+>>>>>>> add-payment
                                 <div class="single-table">
                                     <div class="table-responsive">
                                         <table class="table text-center">
@@ -69,6 +97,15 @@ $detail = mysqli_fetch_assoc($db);
                                                 </tr>
                                             <?php } ?>
                                             </tbody>
+<<<<<<< HEAD
+=======
+                                            <tfoot>
+                                                <tr>
+                                                    <th colspan="5">Total</th>
+                                                    <th>Rp. <?php echo number_format($detail['total_pembelian']);?></th>
+                                                </tr>
+                                            </tfoot>
+>>>>>>> add-payment
                                         </table>
                                     </div>
                                 </div>
@@ -77,3 +114,7 @@ $detail = mysqli_fetch_assoc($db);
                 </div>
             </div>
 	</div>
+<<<<<<< HEAD
+=======
+    <br><br><br>
+>>>>>>> add-payment

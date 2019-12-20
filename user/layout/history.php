@@ -1,7 +1,21 @@
 <?php 
+<<<<<<< HEAD
 	$db = mysqli_query($koneksi,"SELECT * FROM pelanggan where email_pelanggan='".$_SESSION['pelanggan']."'");
 	$data = mysqli_fetch_assoc($db);
 ?>
+=======
+    
+    if(!isset($_SESSION["pelanggan"]) OR empty($_SESSION["pelanggan"])){
+        echo "<script>alert('Login Required')</script>";
+        echo "<script>location='index.php?bettakuu=login-user'</script>";
+        exit();
+    }else{
+        $db = mysqli_query($koneksi,"SELECT * FROM pelanggan where email_pelanggan='".$_SESSION['pelanggan']."'");
+        $data = mysqli_fetch_assoc($db);
+    }
+?>
+
+>>>>>>> add-payment
   <body class="goto-here">
 
     <div class="hero-wrap hero-bread" style="background-image: url('assets/images/background_3.jpg');">
@@ -47,6 +61,10 @@
                                                     <td>RP. <?php echo number_format($history['total_pembelian']);?></td>
                                                     <td>
                                                         <a href="index.php?bettaku=nota&id=<?php echo $history['id_pembelian']; ?>" class="btn btn-primary">Detail</a>
+<<<<<<< HEAD
+=======
+                                                        <a href="index.php?bettaku=payment&id=<?php echo $history['id_pembelian']; ?>" style="background: #212529" class="btn btn-primary">Pembayaran</a>
+>>>>>>> add-payment
                                                     </td>
                                                 </tr>
                                             <?php } ?>

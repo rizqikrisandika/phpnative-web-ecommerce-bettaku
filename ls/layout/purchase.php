@@ -15,9 +15,17 @@
                                             <tr>
                                             <td>No</td>
                                             <td>Customer</td>
+<<<<<<< HEAD
                                             <td>Date</td>
                                             <td>Total</td>
                                             <td></td>
+=======
+                                            <td>Email</td>
+                                            <td>Date</td>
+                                            <td>Total</td>
+                                            <td>Status</td>
+                                            <td>Action</td>
+>>>>>>> add-payment
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -30,8 +38,15 @@
                                                 <tr>
                                                     <td><?php echo $no++ ?></td>
                                                     <td><?php echo $pembelian['nama_pelanggan'];?></td>
+<<<<<<< HEAD
                                                     <td><?php echo $pembelian['tanggal_pembelian'];?></td>
                                                     <td><?php echo $pembelian['total_pembelian'];?></td>
+=======
+                                                    <td><?php echo $pembelian['email_pelanggan'];?></td>
+                                                    <td><?php echo $pembelian['tanggal_pembelian'];?></td>
+                                                    <td><?php echo $pembelian['total_pembelian'];?></td>
+                                                    <td><?php echo $pembelian['status_pembelian'];?></td>
+>>>>>>> add-payment
                                                     <td>
                                                         <a href="index.php?page=detailpurchase&id=<?php echo $pembelian['id_pembelian'];?>" class="btn btn-info">Detail</a>
                                                     </td>

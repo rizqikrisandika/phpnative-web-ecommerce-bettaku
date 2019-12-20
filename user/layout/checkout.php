@@ -1,6 +1,18 @@
 <?php 
+<<<<<<< HEAD
 	$db = mysqli_query($koneksi,"SELECT * FROM pelanggan where email_pelanggan='".$_SESSION['pelanggan']."'");
 	$data = mysqli_fetch_assoc($db);
+=======
+    
+    if(!isset($_SESSION["pelanggan"]) OR empty($_SESSION["pelanggan"])){
+        echo "<script>alert('Login Required')</script>";
+        echo "<script>location='index.php?bettakuu=login-user'</script>";
+        exit();
+    }else{
+        $db = mysqli_query($koneksi,"SELECT * FROM pelanggan where email_pelanggan='".$_SESSION['pelanggan']."'");
+        $data = mysqli_fetch_assoc($db);
+    }
+>>>>>>> add-payment
 ?>
   <body class="goto-here">
 

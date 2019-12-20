@@ -16,8 +16,13 @@ $detail = $ambil->fetch_assoc();
                             <div class="card-body">
                                 <h4 class="header-title">Detail Purchase</h4>
 
+<<<<<<< HEAD
                                 <strong>
                                         <?php echo $detail['nama_pelanggan'];?>
+=======
+                                    <strong>
+                                        <h4><?php echo $detail['nama_pelanggan'];?></h4>
+>>>>>>> add-payment
                                     </strong>
 
                                     <p>
@@ -30,7 +35,15 @@ $detail = $ambil->fetch_assoc();
                                     <p>
                                         Tanggal : <?php echo $detail['tanggal_pembelian'];?>
                                         <br>
+<<<<<<< HEAD
                                         Total   : <?php echo $detail['total_pembelian'];?>
+=======
+                                        Total   : Rp. <?php echo number_format($detail['total_pembelian']);?>
+                                    </p>
+
+                                    <p>
+                                        Status : <?php echo $detail['status_pembelian'];?>
+>>>>>>> add-payment
                                     </p>
                                     <br><br>
                                 <div class="single-table">
@@ -57,7 +70,11 @@ $detail = $ambil->fetch_assoc();
                                                     <td><?php echo $pecah['harga_produk'];?></td>
                                                     <td><?php echo $pecah['jumlah']?></td>
                                                     <td>
+<<<<<<< HEAD
                                                         <?php echo $pecah['harga_produk']*$pecah['jumlah']?>
+=======
+                                                        Rp. <?php echo number_format($pecah['harga_produk']*$pecah['jumlah']); ?>
+>>>>>>> add-payment
                                                     </td>
                                                 </tr>
                                                 <?php }?>

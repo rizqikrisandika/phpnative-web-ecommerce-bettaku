@@ -57,6 +57,15 @@
                         case 'cartlogin':
                             include "user/proses/cartlogin.php";
                             break;  
+<<<<<<< HEAD
+=======
+                        case 'payment':
+                            include "user/layout/payment.php";
+                            break;  
+                        case 'paymentt':
+                            include "user/proses/payment.php";
+                            break; 
+>>>>>>> add-payment
                         default:
                             include "user/layout/404.php";
                             break;
