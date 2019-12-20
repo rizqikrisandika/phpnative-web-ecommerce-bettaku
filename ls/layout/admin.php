@@ -1,6 +1,8 @@
-<!doctype html>
-<html class="no-js" lang="en">
 
+<?php 
+    $db = mysqli_query($koneksi,"SELECT * FROM admin where username_admin='".$_SESSION['admin']."'");
+    $data = mysqli_fetch_assoc($db);
+?>
 <body>
             <!-- page title area end -->
             <div class="main-content-inner">
@@ -32,7 +34,11 @@
                                                     <td><?php echo $admin['username_admin'];?></td>
                                                     <td><?php echo $admin['nama_admin'];?></td>
                                                     <td>
+                                                    <?php if($data['username_admin']!==$admin['username_admin']): ?>
                                                         <a href="index.php?page=delete-admin&id=<?php echo $admin['id_admin'];?>" class="btn-danger btn" onclick="javascript: return confirm('Anda yakin hapus Admin <?php echo $admin['username_admin'] ?>?')">Delete</a>
+                                                        
+                                                    <?php endif ?>
+                                                        
                                                     </td>
                                                 </tr>
                                             <?php } ?>
@@ -236,5 +242,4 @@
         </div>
     </div>
 </body>
-
-</html>
+\\

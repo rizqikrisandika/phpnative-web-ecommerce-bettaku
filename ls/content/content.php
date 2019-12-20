@@ -63,11 +63,11 @@
                         case 'purchase':
                             include "layout/purchase.php";
                             break;	
-                        case 'purchase':
-                            include "layout/purchase.php";
-                            break;
                         case 'detailpurchase':
                             include "layout/detailpurchase.php";
+                            break;
+                        case 'purchase-payment':
+                            include "layout/purchasepayment.php";
                             break;					
                         default:
                             include "layout/404.php";

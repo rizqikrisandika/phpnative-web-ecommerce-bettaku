@@ -1,9 +1,4 @@
 <?php 
-<<<<<<< HEAD
-	$db = mysqli_query($koneksi,"SELECT * FROM pelanggan where email_pelanggan='".$_SESSION['pelanggan']."'");
-	$data = mysqli_fetch_assoc($db);
-?>
-=======
     
     if(!isset($_SESSION["pelanggan"]) OR empty($_SESSION["pelanggan"])){
         echo "<script>alert('Login Required')</script>";
@@ -15,7 +10,6 @@
     }
 ?>
 
->>>>>>> add-payment
   <body class="goto-here">
 
     <div class="hero-wrap hero-bread" style="background-image: url('assets/images/background_3.jpg');">
@@ -44,6 +38,7 @@
                                                     <th>No</th>
                                                     <th>Date</th>
                                                     <th>Total</th>
+                                                    <th>Status</th>
                                                     <th>Option</th>
                                                 </tr>
                                             </thead>
@@ -59,12 +54,15 @@
                                                     <td><?php echo $no++?></td>
                                                     <td><?php echo $history['tanggal_pembelian']; ?></td>
                                                     <td>RP. <?php echo number_format($history['total_pembelian']);?></td>
+                                                    <td><?php echo $history['status_pembelian']; ?></td>
                                                     <td>
+                                                    <?php if($history['status_pembelian']=="Verifikasi" OR $history['status_pembelian']== "Sudah dibayar"): ?>
                                                         <a href="index.php?bettaku=nota&id=<?php echo $history['id_pembelian']; ?>" class="btn btn-primary">Detail</a>
-<<<<<<< HEAD
-=======
+                                                    <?php else: ?>
+                                                        <a href="index.php?bettaku=nota&id=<?php echo $history['id_pembelian']; ?>" class="btn btn-primary">Detail</a>
                                                         <a href="index.php?bettaku=payment&id=<?php echo $history['id_pembelian']; ?>" style="background: #212529" class="btn btn-primary">Pembayaran</a>
->>>>>>> add-payment
+                                                    <?php endif ?>
+                                                        
                                                     </td>
                                                 </tr>
                                             <?php } ?>

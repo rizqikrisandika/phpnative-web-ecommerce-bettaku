@@ -16,15 +16,10 @@ $detail = $ambil->fetch_assoc();
                             <div class="card-body">
                                 <h4 class="header-title">Detail Purchase</h4>
 
-<<<<<<< HEAD
-                                <strong>
-                                        <?php echo $detail['nama_pelanggan'];?>
-=======
                                     <strong>
                                         <h4><?php echo $detail['nama_pelanggan'];?></h4>
->>>>>>> add-payment
                                     </strong>
-
+                                    <br>
                                     <p>
                                         <?php echo $detail['nohp_pelanggan'];?>
                                         <br>
@@ -35,15 +30,11 @@ $detail = $ambil->fetch_assoc();
                                     <p>
                                         Tanggal : <?php echo $detail['tanggal_pembelian'];?>
                                         <br>
-<<<<<<< HEAD
-                                        Total   : <?php echo $detail['total_pembelian'];?>
-=======
                                         Total   : Rp. <?php echo number_format($detail['total_pembelian']);?>
                                     </p>
 
                                     <p>
                                         Status : <?php echo $detail['status_pembelian'];?>
->>>>>>> add-payment
                                     </p>
                                     <br><br>
                                 <div class="single-table">
@@ -61,20 +52,16 @@ $detail = $ambil->fetch_assoc();
                                             <tbody>
                                                 <?php $mulai = 0;
 							                    $no = $mulai+1; ?>
-                                                <?php $ambil=$koneksi->query("SELECT * FROM pembelian_produk JOIN produk ON
+                                                <?php $db = mysqli_query($koneksi,"SELECT * FROM pembelian_produk JOIN produk ON
                                                 pembelian_produk.id_produk=produk.id_produk WHERE pembelian_produk.id_pembelian='$_GET[id]'");?>
-                                                <?php while ($pecah = $ambil->fetch_assoc()){?>
+                                                <?php while ($detail = mysqli_fetch_assoc($db)){?>
                                                 <tr>
                                                     <td><?php echo $no++ ?></td>
-                                                    <td><?php echo $pecah['nama_produk'];?></td>
-                                                    <td><?php echo $pecah['harga_produk'];?></td>
-                                                    <td><?php echo $pecah['jumlah']?></td>
+                                                    <td><?php echo $detail['nama_produk'];?></td>
+                                                    <td><?php echo $detail['harga_produk'];?></td>
+                                                    <td><?php echo $detail['jumlah']?></td>
                                                     <td>
-<<<<<<< HEAD
-                                                        <?php echo $pecah['harga_produk']*$pecah['jumlah']?>
-=======
-                                                        Rp. <?php echo number_format($pecah['harga_produk']*$pecah['jumlah']); ?>
->>>>>>> add-payment
+                                                        Rp. <?php echo number_format($detail['harga_produk']*$detail['jumlah']); ?>
                                                     </td>
                                                 </tr>
                                                 <?php }?>
@@ -90,14 +77,7 @@ $detail = $ambil->fetch_assoc();
 
             
         </div>
-        <!-- main content area end -->
-        <!-- footer area start-->
-        <footer>
-            <div class="footer-area">
-                <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
-            </div>
-        </footer>
-        <!-- footer area end-->
+
     </div>
     <!-- page container area end -->
     <!-- offset area start -->

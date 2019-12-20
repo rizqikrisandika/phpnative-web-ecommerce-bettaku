@@ -15,17 +15,11 @@
                                             <tr>
                                             <td>No</td>
                                             <td>Customer</td>
-<<<<<<< HEAD
-                                            <td>Date</td>
-                                            <td>Total</td>
-                                            <td></td>
-=======
                                             <td>Email</td>
                                             <td>Date</td>
                                             <td>Total</td>
                                             <td>Status</td>
                                             <td>Action</td>
->>>>>>> add-payment
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -38,17 +32,18 @@
                                                 <tr>
                                                     <td><?php echo $no++ ?></td>
                                                     <td><?php echo $pembelian['nama_pelanggan'];?></td>
-<<<<<<< HEAD
-                                                    <td><?php echo $pembelian['tanggal_pembelian'];?></td>
-                                                    <td><?php echo $pembelian['total_pembelian'];?></td>
-=======
                                                     <td><?php echo $pembelian['email_pelanggan'];?></td>
                                                     <td><?php echo $pembelian['tanggal_pembelian'];?></td>
                                                     <td><?php echo $pembelian['total_pembelian'];?></td>
                                                     <td><?php echo $pembelian['status_pembelian'];?></td>
->>>>>>> add-payment
                                                     <td>
+                                                    <?php if($pembelian['status_pembelian']=="Verifikasi"): ?>
                                                         <a href="index.php?page=detailpurchase&id=<?php echo $pembelian['id_pembelian'];?>" class="btn btn-info">Detail</a>
+                                                        <a href="index.php?page=purchase-payment&id=<?php echo $pembelian['id_pembelian'];?>" class="btn btn-success">Payment</a>
+                                                    <?php else: ?>
+                                                        <a href="index.php?page=detailpurchase&id=<?php echo $pembelian['id_pembelian'];?>" class="btn btn-info">Detail</a>
+                                                    <?php endif ?>
+                                                        
                                                     </td>
                                                 </tr>
                                             <?php } ?>
