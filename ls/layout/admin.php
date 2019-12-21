@@ -1,67 +1,69 @@
-
 <?php 
     $db = mysqli_query($koneksi,"SELECT * FROM admin where username_admin='".$_SESSION['admin']."'");
     $data = mysqli_fetch_assoc($db);
 ?>
-<body>
-            <!-- page title area end -->
-            <div class="main-content-inner">
-                <div class="row">
 
-                    <div class="col-lg-12 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Data Admin</h4>
-                                <a href="index.php?page=form-admin" class="btn btn-primary">Add Admin</a><br><br>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table class="table text-center">
-                                            <thead class="text-uppercase bg-dark">
-                                                <tr class="text-white">
-                                                    <th>ID</th>
-                                                    <th>Username</th>
-                                                    <th>Name</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            <?php 
+<body>
+    <!-- page title area end -->
+    <div class="main-content-inner">
+        <div class="row">
+
+            <div class="col-lg-12 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="header-title">Data Admin</h4>
+                        <a href="index.php?page=form-admin" class="btn btn-primary">Add Admin</a><br><br>
+                        <div class="single-table">
+                            <div class="table-responsive">
+                                <table class="table text-center">
+                                    <thead class="text-uppercase bg-dark">
+                                        <tr class="text-white">
+                                            <th>ID</th>
+                                            <th>Username</th>
+                                            <th>Name</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php 
                                             $db = mysqli_query($koneksi,"SELECT * FROM admin");                                               
                                             
                                             while ($admin = mysqli_fetch_array($db)) { ?>
-                                                <tr>
-                                                    <td><?php echo $admin['id_admin']; ?></td>
-                                                    <td><?php echo $admin['username_admin'];?></td>
-                                                    <td><?php echo $admin['nama_admin'];?></td>
-                                                    <td>
-                                                    <?php if($data['username_admin']!==$admin['username_admin']): ?>
-                                                        <a href="index.php?page=delete-admin&id=<?php echo $admin['id_admin'];?>" class="btn-danger btn" onclick="javascript: return confirm('Anda yakin hapus Admin <?php echo $admin['username_admin'] ?>?')">Delete</a>
-                                                        
-                                                    <?php endif ?>
-                                                        
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                                        <tr>
+                                            <td><?php echo $admin['id_admin']; ?></td>
+                                            <td><?php echo $admin['username_admin'];?></td>
+                                            <td><?php echo $admin['nama_admin'];?></td>
+                                            <td>
+                                                <?php if($data['username_admin']!==$admin['username_admin']): ?>
+                                                <a href="index.php?page=delete-admin&id=<?php echo $admin['id_admin'];?>"
+                                                    class="btn-danger btn"
+                                                    onclick="javascript: return confirm('Anda yakin hapus Admin <?php echo $admin['username_admin'] ?>?')">Delete</a>
+
+                                                <?php endif ?>
+
+                                            </td>
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            
         </div>
-        <!-- main content area end -->
-        <!-- footer area start-->
-        <footer>
-            <div class="footer-area">
-                <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
-            </div>
-        </footer>
-        <!-- footer area end-->
+    </div>
+
+
+    </div>
+    <!-- main content area end -->
+    <!-- footer area start-->
+    <footer>
+        <div class="footer-area">
+            <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
+        </div>
+    </footer>
+    <!-- footer area end-->
     </div>
     <!-- page container area end -->
     <!-- offset area start -->

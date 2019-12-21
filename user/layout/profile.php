@@ -3,8 +3,6 @@
 	$data = mysqli_fetch_assoc($db);
 ?>
   <body class="goto-here">
-		
-    <!-- END nav -->
 
     <div class="hero-wrap hero-bread" style="background-image: url('assets/images/background_3.jpg');">
       <div class="container">
@@ -19,32 +17,26 @@
 
     <section class="ftco-section contact-section bg-light">
       <div class="container">
-      	<div class="row d-flex mb-5 contact-info">
-          <div class="w-100"></div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Name:</span> <?php echo $data['nama_pelanggan'] ?></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Username:</span> <?php echo $data['username_pelanggan'] ?></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Email:</span> <?php echo $data['email_pelanggan'] ?></p>
-	          </div>
-          </div>
-          <div class="col-md-3 d-flex">
-          	<div class="info bg-white p-4">
-	            <p><span>Phone:</span> <?php echo $data['nohp_pelanggan'] ?></p>
-	          </div>
-          </div>
-        </div>
+      	
         <div class="row block-9">
+        <div class="col-md-6 d-flex">
+          	<div class="bg-white">
+            <?php if($data['foto_pelanggan']==NULL): ?>
+            <div class="vcard bio">
+              <img src="assets/images/user.png" class="image-responsive" alt="">
+            </div>
+             
+            <?php else: ?>
+            <div class="vcard bio">
+              <img src="<?php echo $data['foto_pelanggan'] ?>" class="image-profil" style="height:550px" alt="">
+            </div>
+              
+            <?php endif ?>
+            </div>
+          </div>
+
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-white p-5 contact-form">
+            <form class="bg-white p-5 contact-form">
               <div class="form-group">
                 <label for="">Name</label>
                 <input type="text" class="form-control" readonly value="<?php echo $data['nama_pelanggan'] ?>">
@@ -66,16 +58,10 @@
                 <textarea name="" id="" cols="30" rows="7" readonly class="form-control" placeholder="Message"><?php echo $data['alamat_pelanggan'] ?></textarea>
               </div>
               <div class="form-group">
-                <button name="editprofile" class="btn btn-primary py-3 px-5">Edit</button>
+                <a href="index.php?bettaku=editprofile&id=<?php echo $data['id_pelanggan'] ?>" name="editprofile" class="btn btn-primary py-3 px-5">Edit</a>
               </div>
             </form>
           
-          </div>
-
-          <div class="col-md-6 d-flex">
-          	<div class="bg-white">
-             
-            </div>
           </div>
         </div>
       </div>
@@ -83,3 +69,5 @@
 
   
   </body>
+
+  

@@ -1,6 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
+<?php $dbadmin = mysqli_query($koneksi,"SELECT * FROM admin where username_admin='".$_SESSION['admin']."'");
+    $dataadmin = mysqli_fetch_assoc($dbadmin); ?>
+
 <body>
             <!-- page title area end -->
             <div class="main-content-inner">
@@ -9,7 +12,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="header-title">DataProduct</h4>
-                                <a href="index.php?page=form-product" class="btn btn-primary">Add Product</a><br><br>
+                                <a href="index.php?page=form-product&id=<?php echo $dataadmin['id_admin']?>" class="btn btn-primary">Add Product</a><br><br>
                                 <div class="data-tables datatable-dark">
                                     <table id="dataTable3" class="text-center">
                                         <thead class="text-capitalize">

@@ -3,74 +3,75 @@
 
 <body>
 
-            <?php
-                $db = mysqli_query($koneksi,"SELECT * FROM produk WHERE id_produk=$_GET[id]");
-                $produk = mysqli_fetch_assoc($db);
-
-                $query = "Select * from kategori";
-                $db1 = mysqli_query($koneksi, $query);
-            ?>
-            <div class="main-content-inner">
+    <?php
+        $db = mysqli_query($koneksi,"SELECT * FROM produk WHERE id_produk=$_GET[id]");
+        $produk = mysqli_fetch_assoc($db);
+    ?>
+    
+    <div class="main-content-inner">
+        <div class="row">
+            <div class="col-lg-6 col-ml-12">
                 <div class="row">
-                    <div class="col-lg-6 col-ml-12">
-                        <div class="row">
-                            <!-- Textual inputs start -->
-                            <div class="col-12 mt-5">
-                                <div class="card">
-                                    <div class="card-body">
-                                    <h4 class="header-title">Edit Product</h4>
-                                        <form action="" method="post" enctype="multipart/form-data">
-                                            <div class="form-group">
-                                                <label for="example-text-input" class="col-form-label">Name Product</label>
-                                                <input class="form-control" type="text" name="nama" id="example-text-input" value="<?php echo $produk['nama_produk'];?>" >
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="example-search-input" class="col-form-label">Price</label>
-                                                <input class="form-control" type="number" name="harga" id="example-search-input" value="<?php echo $produk['harga_produk'];?>">
-                                            </div>
-                                            <div class="form-group">
-                                                <img src="<?php echo $produk['foto_produk'];?>" alt="" width="150">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="example-search-input" class="col-form-label">Edit Photo</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" name="foto" id="customFile">
-                                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-form-label">Category</label>
-                                                <select class="custom-select" name="kategori">
-                                                    <?php while($data = mysqli_fetch_array($db1)): ?>
-                                                        <option value="<?php echo $data['id_kategori']?>">
-                                                            <?php echo $data['nama_kategori']?>
-                                                        </option>
-                                                    <?php endwhile;?>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="example-search-input" class="col-form-label">Desc</label>
-                                                <textarea class="form-control" aria-label="With textarea" name="deskripsi" cols="30" rows="10"><?php echo $produk['deskripsi_produk'];?></textarea>
-                                            </div>
-                                            <button class="btn btn-primary" name="save">Save</button>
-                                        </form>
+                    <!-- Textual inputs start -->
+                    <div class="col-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">Edit Product</h4>
+                                <form action="" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="col-form-label">Name Product</label>
+                                        <input class="form-control" type="text" name="nama" id="example-text-input"
+                                            value="<?php echo $produk['nama_produk'];?>">
                                     </div>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="example-search-input" class="col-form-label">Price</label>
+                                        <input class="form-control" type="number" name="harga" id="example-search-input"
+                                            value="<?php echo $produk['harga_produk'];?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <img src="<?php echo $produk['foto_produk'];?>" alt="" width="150">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-search-input" class="col-form-label">Edit Photo</label>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" name="foto" id="customFile">
+                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-form-label">Category</label>
+                                        <select class="custom-select" name="kategori">
+                                            <?php while($data = mysqli_fetch_array($db1)): ?>
+                                            <option value="<?php echo $data['id_kategori']?>">
+                                                <?php echo $data['nama_kategori']?>
+                                            </option>
+                                            <?php endwhile;?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-search-input" class="col-form-label">Desc</label>
+                                        <textarea class="form-control" aria-label="With textarea" name="deskripsi"
+                                            cols="30" rows="10"><?php echo $produk['deskripsi_produk'];?></textarea>
+                                    </div>
+                                    <button class="btn btn-primary" name="save">Save</button>
+                                </form>
                             </div>
-
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
-        <!-- main content area end -->
-        <!-- footer area start-->
-        <footer>
-            <div class="footer-area">
-                <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
-            </div>
-        </footer>
-        <!-- footer area end-->
+    </div>
+    </div>
+    <!-- main content area end -->
+    <!-- footer area start-->
+    <footer>
+        <div class="footer-area">
+            <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
+        </div>
+    </footer>
+    <!-- footer area end-->
     </div>
     <!-- page container area end -->
     <!-- offset area start -->

@@ -5,83 +5,83 @@ $detail = mysqli_fetch_assoc($db);
 ?>
 
 <div class="hero-wrap hero-bread" style="background-image: url('assets/images/background_3.jpg');">
-      <div class="container">
+    <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Nota</span></p>
-            <h1 class="mb-0 bread">Nota</h1>
-          </div>
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Nota</span></p>
+                <h1 class="mb-0 bread">Nota</h1>
+            </div>
         </div>
-      </div>
     </div>
+</div>
 
-	<div class="container">
-                            <div class="card-body">
-                                    <strong>
-                                        <h4><?php echo $detail['nama_pelanggan'];?></h4>
-                                    </strong>
+<div class="container">
+    <div class="card-body">
+        <strong>
+            <h4><?php echo $detail['nama_pelanggan'];?></h4>
+        </strong>
 
-                                    <p>
-                                        <?php echo $detail['nohp_pelanggan'];?>
-                                        <br>
-                                        <?php echo $detail['email_pelanggan'];?>
-                                    </p>
+        <p>
+            <?php echo $detail['nohp_pelanggan'];?>
+            <br>
+            <?php echo $detail['email_pelanggan'];?>
+        </p>
 
 
-                                    <p>
-                                        Tanggal : <?php echo $detail['tanggal_pembelian'];?>
-                                        <br>
-                                        Total   : Rp. <?php echo number_format($detail['total_pembelian']);?>
-                                    </p>
+        <p>
+            Tanggal : <?php echo $detail['tanggal_pembelian'];?>
+            <br>
+            Total : Rp. <?php echo number_format($detail['total_pembelian']);?>
+        </p>
 
-                                    <p>
-                                        Status : <?php echo $detail['status_pembelian'];?>
-                                    </p>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table class="table text-center">
-                                            <thead class="text-uppercase bg-dark">
-                                                <tr class="text-white">
-												<th>No</th>
-												<th>Product</th>
-												<th>Photo</th>
-												<th>Price</th>
-												<th>Quantity</th>
-												<th>Subs Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            <?php $mulai = 0;
+        <p>
+            Status : <?php echo $detail['status_pembelian'];?>
+        </p>
+        <div class="single-table">
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead class="text-uppercase bg-dark">
+                        <tr class="text-white">
+                            <th>No</th>
+                            <th>Product</th>
+                            <th>Photo</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subs Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $mulai = 0;
 							                $no = $mulai+1; ?>
-                                            <?php 
+                        <?php 
                                             $db = mysqli_query($koneksi,"SELECT * FROM pembelian_produk JOIN produk ON
                             pembelian_produk.id_produk=produk.id_produk WHERE pembelian_produk.id_pembelian='$_GET[id]'");                                               
                                             
                                             while ($nota = mysqli_fetch_array($db)) { ?>
-                                                <tr>
-                                                    <td><?php echo $no++?></td>
-                                                    <td><?php echo $nota['nama_produk']; ?></td>
-													<td><img src="ls/<?php echo $nota['foto_produk'];?>" width="100"></td>
-                                                    <td>RP. <?php echo number_format($nota['harga_produk']);?></td>
-													<td><?php echo $nota['jumlah']; ?></td>
-                                                    <td>
-													Rp. <?php echo number_format($nota['harga_produk']*$nota['jumlah']) ;?>
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th colspan="5">Total</th>
-                                                    <th>Rp. <?php echo number_format($detail['total_pembelian']);?></th>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
+                        <tr>
+                            <td><?php echo $no++?></td>
+                            <td><?php echo $nota['nama_produk']; ?></td>
+                            <td><img src="ls/<?php echo $nota['foto_produk'];?>" width="100"></td>
+                            <td>RP. <?php echo number_format($nota['harga_produk']);?></td>
+                            <td><?php echo $nota['jumlah']; ?></td>
+                            <td>
+                                Rp. <?php echo number_format($nota['harga_produk']*$nota['jumlah']) ;?>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="5">Total</th>
+                            <th>Rp. <?php echo number_format($detail['total_pembelian']);?></th>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
-	</div>
-    <br><br><br>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<br><br><br>

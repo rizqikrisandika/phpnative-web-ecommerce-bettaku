@@ -60,6 +60,9 @@
                         case 'payment':
                             include "user/layout/payment.php";
                             break;  
+                        case 'editprofile':
+                            include "user/layout/editprofile.php";
+                            break;
                         default:
                             include "user/layout/404.php";
                             break;

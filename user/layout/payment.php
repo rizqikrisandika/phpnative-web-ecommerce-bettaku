@@ -12,48 +12,49 @@
 ?>
 
 <div class="hero-wrap hero-bread" style="background-image: url('assets/images/background_3.jpg');">
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-center justify-content-center">
-          <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Payment Confirmation</span></p>
-            <h1 class="mb-0 bread">Payment Confirmation</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-<br><br><br>
     <div class="container">
-        <h3>Payment Confirmation</h3>
-
-        <div class="alert alert-info">Total Rp. <?php echo number_format($pembelian['total_pembelian']); ?></div>
-
-        <form method="post" enctype="multipart/form-data">
-                                            <div class="form-group">
-                                                <label for="example-text-input" class="col-form-label">Name</label>
-                                                <input class="form-control" type="text" name="nama" id="example-text-input">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="example-search-input" class="col-form-label">Bank</label>
-                                                <input class="form-control" type="text" name="bank" id="example-search-input">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="example-search-input" class="col-form-label">Total</label>
-                                                <input class="form-control" type="number" name="total" id="example-search-input">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="example-search-input" class="col-form-label">Photo</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" name="foto" id="customFile">
-                                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-primary" name="send">Send</button>
-                                        </form>
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Payment
+                        Confirmation</span></p>
+                <h1 class="mb-0 bread">Payment Confirmation</h1>
+            </div>
+        </div>
     </div>
+</div>
+<br><br><br>
+<div class="container">
+    <h3>Payment Confirmation</h3>
 
-    <br><br><br>
+    <div class="alert alert-info">Total Rp. <?php echo number_format($pembelian['total_pembelian']); ?></div>
 
-    <?php
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="example-text-input" class="col-form-label">Name</label>
+            <input class="form-control" type="text" name="nama" id="example-text-input">
+        </div>
+        <div class="form-group">
+            <label for="example-search-input" class="col-form-label">Bank</label>
+            <input class="form-control" type="text" name="bank" id="example-search-input">
+        </div>
+        <div class="form-group">
+            <label for="example-search-input" class="col-form-label">Total</label>
+            <input class="form-control" type="number" name="total" id="example-search-input">
+        </div>
+        <div class="form-group">
+            <label for="example-search-input" class="col-form-label">Photo</label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="foto" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+        </div>
+        <button class="btn btn-primary" name="send">Send</button>
+    </form>
+</div>
+
+<br><br><br>
+
+<?php
 
     if(isset($_POST['send']))
     {

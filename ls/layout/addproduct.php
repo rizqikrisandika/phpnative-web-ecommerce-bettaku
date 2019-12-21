@@ -16,7 +16,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                     <h4 class="header-title">Add Product</h4>
-                                        <form action="index.php?page=add-product" method="post" enctype="multipart/form-data">
+                                        <form method="post" enctype="multipart/form-data">
                                             <div class="form-group">
                                                 <label for="example-text-input" class="col-form-label">Name Product</label>
                                                 <input class="form-control" type="text" name="nama" id="example-text-input">
@@ -247,3 +247,28 @@
 </body>
 
 </html>
+
+<?php
+
+    $id_admin = $_GET['id'];
+
+    if(isset($_POST['save']))
+    {
+        if($_FILES['foto']['error']==0){
+            $kategori = $_POST['kategori'];
+            $nama = $_POST['nama'];
+            $harga = $_POST['harga'];
+            $img = $_FILES['foto'];
+            $new_img = 'images/img_'.date('YmdHis').'.png';
+            $deskripsi = $_POST['deskripsi'];
+            if(copy($img['tmp_name'], $new_img)){
+
+                mysqli_query($koneksi,"INSERT INTO produk(id_kategori,id_admin,nama_produk,harga_produk,foto_produk,deskripsi_produk)
+                VALUES('$kategori','$id_admin','$nama','$harga','$new_img','$deskripsi')");
+
+                echo "<script>alert('Data telah ditambah')</script>";
+                echo "<script>location='index.php?page=product'</script>";
+            }
+        }
+    }
+?>

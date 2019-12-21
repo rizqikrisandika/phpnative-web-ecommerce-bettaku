@@ -8,75 +8,76 @@ $detail = $ambil->fetch_assoc();
 <html class="no-js" lang="en">
 
 <body>
-            <div class="main-content-inner">
-                <div class="row">
+    <div class="main-content-inner">
+        <div class="row">
 
-                    <div class="col-lg-12 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Detail Purchase</h4>
+            <div class="col-lg-12 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="header-title">Detail Purchase</h4>
 
-                                    <strong>
-                                        <h4><?php echo $detail['nama_pelanggan'];?></h4>
-                                    </strong>
-                                    <br>
-                                    <p>
-                                        <?php echo $detail['nohp_pelanggan'];?>
-                                        <br>
-                                        <?php echo $detail['email_pelanggan'];?>
-                                    </p>
+                        <strong>
+                            <h4><?php echo $detail['nama_pelanggan'];?></h4>
+                        </strong>
+                        <br>
+                        <p>
+                            <?php echo $detail['nohp_pelanggan'];?>
+                            <br>
+                            <?php echo $detail['email_pelanggan'];?>
+                        </p>
 
 
-                                    <p>
-                                        Tanggal : <?php echo $detail['tanggal_pembelian'];?>
-                                        <br>
-                                        Total   : Rp. <?php echo number_format($detail['total_pembelian']);?>
-                                    </p>
+                        <p>
+                            Tanggal : <?php echo $detail['tanggal_pembelian'];?>
+                            <br>
+                            Total : Rp. <?php echo number_format($detail['total_pembelian']);?>
+                        </p>
 
-                                    <p>
-                                        Status : <?php echo $detail['status_pembelian'];?>
-                                    </p>
-                                    <br><br>
-                                <div class="single-table">
-                                    <div class="table-responsive">
-                                        <table class="table text-center">
-                                            <thead class="text-uppercase bg-dark">
-                                                <tr class="text-white">
-                                                    <th>No</th>
-                                                    <th>Nama Produk</th>
-                                                    <th>Harga</th>
-                                                    <th>Jumlah</th>
-                                                    <th>Substotal</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php $mulai = 0;
+                        <p>
+                            Status : <?php echo $detail['status_pembelian'];?>
+                        </p>
+                        <br><br>
+                        <div class="single-table">
+                            <div class="table-responsive">
+                                <table class="table text-center">
+                                    <thead class="text-uppercase bg-dark">
+                                        <tr class="text-white">
+                                            <th>No</th>
+                                            <th>Nama Produk</th>
+                                            <th>Harga</th>
+                                            <th>Jumlah</th>
+                                            <th>Substotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php $mulai = 0;
 							                    $no = $mulai+1; ?>
-                                                <?php $db = mysqli_query($koneksi,"SELECT * FROM pembelian_produk JOIN produk ON
+                                        <?php $db = mysqli_query($koneksi,"SELECT * FROM pembelian_produk JOIN produk ON
                                                 pembelian_produk.id_produk=produk.id_produk WHERE pembelian_produk.id_pembelian='$_GET[id]'");?>
-                                                <?php while ($detail = mysqli_fetch_assoc($db)){?>
-                                                <tr>
-                                                    <td><?php echo $no++ ?></td>
-                                                    <td><?php echo $detail['nama_produk'];?></td>
-                                                    <td><?php echo $detail['harga_produk'];?></td>
-                                                    <td><?php echo $detail['jumlah']?></td>
-                                                    <td>
-                                                        Rp. <?php echo number_format($detail['harga_produk']*$detail['jumlah']); ?>
-                                                    </td>
-                                                </tr>
-                                                <?php }?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                                        <?php while ($detail = mysqli_fetch_assoc($db)){?>
+                                        <tr>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?php echo $detail['nama_produk'];?></td>
+                                            <td><?php echo $detail['harga_produk'];?></td>
+                                            <td><?php echo $detail['jumlah']?></td>
+                                            <td>
+                                                Rp.
+                                                <?php echo number_format($detail['harga_produk']*$detail['jumlah']); ?>
+                                            </td>
+                                        </tr>
+                                        <?php }?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            
         </div>
+    </div>
+
+
+    </div>
 
     </div>
     <!-- page container area end -->
