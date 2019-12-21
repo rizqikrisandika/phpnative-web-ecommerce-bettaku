@@ -63,6 +63,18 @@
                         case 'editprofile':
                             include "user/layout/editprofile.php";
                             break;
+                        case 'addproduct':
+                            include "user/layout/addproduct.php";
+                            break;
+                        case 'listproduct':
+                            include "user/layout/listproduct.php";
+                            break;
+                        case 'deleteproduct':
+                            include "user/proses/deleteproduct.php";
+                            break;
+                        case 'editproduct':
+                            include "user/layout/editproduct.php";
+                            break;
                         default:
                             include "user/layout/404.php";
                             break;

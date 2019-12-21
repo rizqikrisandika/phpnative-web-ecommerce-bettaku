@@ -6,6 +6,9 @@
     <?php
         $db = mysqli_query($koneksi,"SELECT * FROM produk WHERE id_produk=$_GET[id]");
         $produk = mysqli_fetch_assoc($db);
+
+        $query = "Select * from kategori";
+        $db1 = mysqli_query($koneksi, $query);
     ?>
     
     <div class="main-content-inner">
