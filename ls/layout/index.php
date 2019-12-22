@@ -18,7 +18,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>srtdash - ICO Dashboard</title>
+    <title>Bettaku Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -52,7 +52,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="index.php"><img src="assets/images/icon/logo.png" alt="logo"></a>
+                    <a href="index.php"><img src="assets/images/logo_3.png" alt="logo"></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -81,7 +81,13 @@
                                 <ul class="collapse">
                                     <li><a href="index.php?page=admin">Admin</a></li>
                                     <li><a href="index.php?page=user">User</a></li>
-                                    <li><a href="index.php?page=product">Product</a></li>
+                                    <li>
+                                        <a href="javascript:void(0)" aria-expanded="true">Product</a>
+                                            <ul class="collapse">
+                                                <li><a href="index.php?page=productadmin">Admin</a></li>
+                                                <li><a href="index.php?page=productuser">User</a></li>
+                                            </ul>
+                                    </li>
                                     <li><a href="index.php?page=category">Kategori</a></li>
                                     <li><a href="index.php?page=purchase">Purchase</a></li>
                                 </ul>

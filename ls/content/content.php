@@ -39,8 +39,11 @@
                         case 'user':
                             include "layout/user.php";
                             break;
-                        case 'product':
-                            include "layout/product.php";
+                        case 'productadmin':
+                            include "layout/productadmin.php";
+                            break;
+                         case 'productuser':
+                            include "layout/productuser.php";
                             break;
                         case 'form-product':
                             include "layout/addproduct.php";

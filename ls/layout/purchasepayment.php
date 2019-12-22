@@ -42,7 +42,8 @@ $pp = mysqli_fetch_assoc($db);
                                         </table>
 
                                         <form action="" method="post">
-                                            <button name="verif" class="btn btn-success">Verifikasi</button>
+                                            <button name="verif" class="btn btn-success" onclick="javascript: return confirm('Verifikasi Pembayaran a/n <?php echo $pp['nama'] ?> benar?')">Verifikasi</button>
+                                            <button name="cancel" class="btn btn-danger" onclick="javascript: return confirm('Anda yakin Cancel Pembayaran <?php echo $pp['nama'] ?>?')">Cancel</button>
                                         </form>
                                     </div>
                                 </div>
@@ -57,5 +58,12 @@ $pp = mysqli_fetch_assoc($db);
                 if(isset($_POST['verif'])){
                     mysqli_query($koneksi,"UPDATE pembelian SET status_pembelian='Sudah dibayar' WHERE id_pembelian='$id_pembelian'");
                     echo "<script>alert('Succes')</script>";
+                    echo "<script>location='index.php?page=purchase'</script>";
+                }
+
+                if(isset($_POST['cancel'])){
+                    mysqli_query($koneksi,"UPDATE pembelian SET status_pembelian='Di batalkan' WHERE id_pembelian='$id_pembelian'");
+                    echo "<script>alert('Succes')</script>";
+                    echo "<script>location='index.php?page=purchase'</script>";
                 }
             ?>

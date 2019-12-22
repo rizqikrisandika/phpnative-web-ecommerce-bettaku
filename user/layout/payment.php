@@ -63,7 +63,7 @@
             $bank = $_POST['bank'];
             $total = $_POST['total'];
             $img = $_FILES['foto'];
-            $new_img = 'user/bukti_pembayaran/img_'.date('YmdHis').'.png';
+            $new_img = 'ls/bukti_pembayaran/img_'.date('YmdHis').'.png';
             if(copy($img['tmp_name'], $new_img)){
 
                 mysqli_query($koneksi,"INSERT INTO pembayaran (id_pembelian,nama,bank,jumlah_pembayaran,bukti_pembayaran)

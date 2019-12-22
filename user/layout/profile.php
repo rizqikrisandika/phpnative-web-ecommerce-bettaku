@@ -44,10 +44,19 @@
               <div class="container">
                 <h4 class="text-center">Your Product</h4>
                 <br>
-                <a href="index.php?bettaku=addproduct&id=<?php echo $data['id_pelanggan']?>" class="btn btn-primary">Add
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                  <a href="index.php?bettaku=addproduct&id=<?php echo $data['id_pelanggan']?>" class="btn btn-primary">Add
                   Product</a>
-                <a href="index.php?bettaku=listproduct&id=<?php echo $data['id_pelanggan']?>"
+                  </div>
+
+                  <div class="col-md-6 col-sm-6">
+                  <a href="index.php?bettaku=listproduct&id=<?php echo $data['id_pelanggan']?>"
                   class="btn btn-primary">List Product</a>
+                  </div>
+                </div>
+               
+                
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@
                     <div class="col-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">DataProduct</h4>
+                                <h4 class="header-title">Data Product Admin</h4>
                                 <a href="index.php?page=form-product&id=<?php echo $dataadmin['id_admin']?>" class="btn btn-primary">Add Product</a><br><br>
                                 <div class="data-tables datatable-dark">
                                     <table id="dataTable3" class="text-center">
@@ -19,6 +19,7 @@
                                             <tr>
                                             <th>No</th>
                                             <th>Date Time</th>
+                                            <th>Admin</th>
                                             <th>Name</th>
                                             <th>Price</th>
                                             <th>Photo</th>
@@ -28,7 +29,12 @@
                                         </thead>
                                         <tbody>
                                         <?php 
-                                            $db = mysqli_query($koneksi,"SELECT p.id_produk,p.nama_produk,p.tanggal_produk,p.harga_produk,p.foto_produk,k.id_kategori,k.nama_kategori from produk p join kategori k on p.id_kategori=k.id_kategori order by p.tanggal_produk desc");                                               
+                                            $db = mysqli_query($koneksi,"SELECT * from produk 
+                                            join kategori on produk.id_kategori=kategori.id_kategori
+                                             
+                                            join admin on produk.id_admin=admin.id_admin 
+                                            order by produk.tanggal_produk desc");       
+
                                             $mulai = 0;
                                             $no =$mulai+1;
                                             
@@ -36,10 +42,11 @@
                                                 <tr>
                                                     <td><?php echo $no++ ?></td>
                                                     <td><?php echo $produk['tanggal_produk'];?></td>
+                                                    <td><?php echo $produk['username_admin'];?></td>
                                                     <td><?php echo $produk['nama_produk'];?></td>
                                                     <td>Rp. <?php echo number_format($produk['harga_produk']);?></td>
                                                     <td>
-                                                        <img src="<?php echo $produk['foto_produk'];?>" width="100">
+                                                        <img src="images/<?php echo $produk['foto_produk'];?>" width="100">
                                                     </td>
                                                     <td><?php echo $produk['nama_kategori'];?></td>
                                                     <td>

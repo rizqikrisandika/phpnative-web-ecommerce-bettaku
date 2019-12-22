@@ -32,7 +32,7 @@
                                             value="<?php echo $produk['harga_produk'];?>">
                                     </div>
                                     <div class="form-group">
-                                        <img src="<?php echo $produk['foto_produk'];?>" alt="" width="150">
+                                        <img src="images/<?php echo $produk['foto_produk'];?>" alt="" width="150">
                                     </div>
                                     <div class="form-group">
                                         <label for="example-search-input" class="col-form-label">Edit Photo</label>
@@ -266,11 +266,11 @@
             $nama = $_POST['nama'];
             $harga = $_POST['harga'];
             $img = $_FILES['foto'];
-            $new_img = 'images/img_'.date('YmdHis').'.png';
+            $new_img = 'img_'.date('YmdHis').'.png';
             $lokasi = $img['tmp_name'];
             $deskripsi = $_POST['deskripsi'];
             if(!empty($lokasi)){
-                move_uploaded_file($lokasi,$new_img);
+                move_uploaded_file($lokasi,"images/".$new_img);
                 mysqli_query($koneksi,"UPDATE produk SET id_kategori='$kategori',nama_produk='$nama',
                 harga_produk='$harga',foto_produk='$new_img',deskripsi_produk='$deskripsi' WHERE id_produk=$_GET[id]");
             }
@@ -279,7 +279,7 @@
                 harga_produk='$harga',deskripsi_produk='$deskripsi' WHERE id_produk=$_GET[id]");
             }
 
-        echo "<script>alert('Data has changed')</script>";
+        echo "<script>alert('Data has been changed')</script>";
         echo "<script>location='index.php?page=product'</script>";
     }
 ?>

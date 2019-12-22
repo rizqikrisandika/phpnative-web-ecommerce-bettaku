@@ -78,15 +78,16 @@
             $nama = $_POST['nama'];
             $harga = $_POST['harga'];
             $img = $_FILES['foto'];
-            $new_img = 'images/img_'.date('YmdHis').'.png';
+            $new_img = 'img_'.date('YmdHis').'.png';
             $deskripsi = $_POST['deskripsi'];
-            if(copy($img['tmp_name'], $new_img)){
+            if(copy($img['tmp_name'],"ls/images/".$new_img)){
 
                 mysqli_query($koneksi,"INSERT INTO produk(id_kategori,id_pelanggan,nama_produk,harga_produk,foto_produk,deskripsi_produk)
                 VALUES('$kategori','$id_pelanggan','$nama','$harga','$new_img','$deskripsi')");
 
                 echo "<script>alert('Add Product Succes')</script>";
-                echo "<script>location='index.php?bettaku=profile'</script>";
+                echo "<script>location='index.php?bettaku=listproduct'</script>";
+                exit();
             }
         }
     }

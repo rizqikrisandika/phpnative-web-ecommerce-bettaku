@@ -8,8 +8,8 @@ $detail = mysqli_fetch_assoc($db);
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Nota</span></p>
-                <h1 class="mb-0 bread">Nota</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Detail shopping</span></p>
+                <h1 class="mb-0 bread">Detail shopping</h1>
             </div>
         </div>
     </div>
@@ -37,6 +37,13 @@ $detail = mysqli_fetch_assoc($db);
         <p>
             Status : <?php echo $detail['status_pembelian'];?>
         </p>
+
+        <p>
+
+            <?php if($detail['status_pembelian']=="Belum bayar" OR $detail['status_pembelian']== "Di batalkan"): ?>
+                <a href="index.php?bettaku=payment&id=<?php echo $detail['id_pembelian']; ?>"style="background: #212529" class="btn btn-primary">Bayar</a>
+            <?php endif ?>
+        </p>
         <div class="single-table">
             <div class="table-responsive">
                 <table class="table text-center">
@@ -52,16 +59,14 @@ $detail = mysqli_fetch_assoc($db);
                     </thead>
                     <tbody>
                         <?php $mulai = 0;
-							                $no = $mulai+1; ?>
+							$no = $mulai+1; ?>
                         <?php 
-                                            $db = mysqli_query($koneksi,"SELECT * FROM pembelian_produk JOIN produk ON
-                            pembelian_produk.id_produk=produk.id_produk WHERE pembelian_produk.id_pembelian='$_GET[id]'");                                               
-                                            
-                                            while ($nota = mysqli_fetch_array($db)) { ?>
+                            $db = mysqli_query($koneksi,"SELECT * FROM pembelian_produk  WHERE id_pembelian='$_GET[id]'");                                               
+                            while ($nota = mysqli_fetch_array($db)) { ?>
                         <tr>
                             <td><?php echo $no++?></td>
                             <td><?php echo $nota['nama_produk']; ?></td>
-                            <td><img src="ls/<?php echo $nota['foto_produk'];?>" width="100"></td>
+                            <td><img src="ls/images/<?php echo $nota['foto_produk'];?>" width="100"></td>
                             <td>RP. <?php echo number_format($nota['harga_produk']);?></td>
                             <td><?php echo $nota['jumlah']; ?></td>
                             <td>

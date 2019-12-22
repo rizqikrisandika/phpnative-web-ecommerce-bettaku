@@ -53,7 +53,7 @@
 										<?php echo $no++?>
 									</td>
 
-									<td><img width="100" class="img" src="ls/<?php echo $cart['foto_produk'];?>"></td>
+									<td><img width="100" class="img" src="ls/images/<?php echo $cart['foto_produk'];?>"></td>
 
 									<td class="product-name">
 										<h3><?php echo $cart['nama_produk'];?></h3>

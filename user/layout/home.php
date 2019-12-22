@@ -104,7 +104,7 @@
 			<?php while($perproduk = mysqli_fetch_assoc($db)){?>
 			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate ">
 				<div class="product d-flex flex-column">
-					<a href="#" class="img-prod"><img class="img-fluid" src="ls/<?php echo $perproduk['foto_produk'];?>"
+					<a href="#" class="img-prod"><img class="img-fluid" src="ls/images/<?php echo $perproduk['foto_produk'];?>"
 							alt="Colorlib Template">
 						<div class="overlay"></div>
 					</a>
@@ -121,7 +121,7 @@
 						</div>
 						<p class="bottom-area d-flex px-3">
 							<?php if(isset($_SESSION["pelanggan"])): ?>
-							<a href="index.php?bettaku=addcart&id=<?php echo $perproduk['id_produk']; ?>"
+							<a href="index.php?bettaku=addcarthome&id=<?php echo $perproduk['id_produk']; ?>"
 								class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i
 										class="ion-ios-add ml-1"></i></span></a>
 							<a href="index.php?bettaku=buy&id=<?php echo $perproduk['id_produk']; ?>"

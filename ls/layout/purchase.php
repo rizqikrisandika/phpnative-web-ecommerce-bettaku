@@ -34,7 +34,7 @@
                                                     <td><?php echo $pembelian['nama_pelanggan'];?></td>
                                                     <td><?php echo $pembelian['email_pelanggan'];?></td>
                                                     <td><?php echo $pembelian['tanggal_pembelian'];?></td>
-                                                    <td><?php echo $pembelian['total_pembelian'];?></td>
+                                                    <td>Rp. <?php echo number_format($pembelian['total_pembelian']);?></td>
                                                     <td><?php echo $pembelian['status_pembelian'];?></td>
                                                     <td>
                                                     <?php if($pembelian['status_pembelian']=="Verifikasi"): ?>

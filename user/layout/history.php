@@ -58,10 +58,10 @@
                                             <td><?php echo $history['status_pembelian']; ?></td>
                                             <td>
                                                 <?php if($history['status_pembelian']=="Verifikasi" OR $history['status_pembelian']== "Sudah dibayar"): ?>
-                                                <a href="index.php?bettaku=nota&id=<?php echo $history['id_pembelian']; ?>"
+                                                <a href="index.php?bettaku=detail&id=<?php echo $history['id_pembelian']; ?>"
                                                     class="btn btn-primary">Detail</a>
                                                 <?php else: ?>
-                                                <a href="index.php?bettaku=nota&id=<?php echo $history['id_pembelian']; ?>"
+                                                <a href="index.php?bettaku=detail&id=<?php echo $history['id_pembelian']; ?>"
                                                     class="btn btn-primary">Detail</a>
                                                 <a href="index.php?bettaku=payment&id=<?php echo $history['id_pembelian']; ?>"
                                                     style="background: #212529" class="btn btn-primary">Pembayaran</a>

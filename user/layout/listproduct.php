@@ -20,6 +20,9 @@ $pelanggan = mysqli_fetch_assoc($db1);
         <div class="row">
             <div class="col-lg-12 mt-5">
                 <div class="card-body">
+                <a href="index.php?bettaku=addproduct&id=<?php echo $pelanggan['id_pelanggan']?>" class="btn btn-primary">Add
+                  Product</a>
+                  <br><br>
                     <div class="single-table">
                         <div class="table-responsive">
                             <table id="dataTable3" class="table text-center">
@@ -48,7 +51,7 @@ $pelanggan = mysqli_fetch_assoc($db1);
                                         <td><?php echo $produk['nama_produk'];?></td>
                                         <td>Rp. <?php echo number_format($produk['harga_produk']);?></td>
                                         <td>
-                                            <img src="ls/<?php echo $produk['foto_produk'];?>" width="100">
+                                            <img src="ls/images/<?php echo $produk['foto_produk'];?>" width="100">
                                         </td>
                                         <td><?php echo $produk['nama_kategori'];?></td>
                                         <td>

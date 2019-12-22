@@ -36,7 +36,7 @@
                         case 'deletecart':
                             include "user/proses/deletecart.php";
                             break;
-                        case 'nota':
+                        case 'detail':
                             include "user/layout/nota.php";
                             break;
                         case 'addcarthome':

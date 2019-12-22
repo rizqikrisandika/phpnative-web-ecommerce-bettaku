@@ -53,7 +53,7 @@
 									<td>
 										<?php echo $no++ ?>
 									</td>
-									<td><img width="100" class="img" src="ls/<?php echo $cart['foto_produk'];?>"></td>
+									<td><img width="100" class="img" src="ls/images/<?php echo $cart['foto_produk'];?>"></td>
 
 									<td class="product-name">
 										<h3><?php echo $cart['nama_produk'];?></h3>
@@ -94,14 +94,14 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="firstname">Name</label>
-									<input type="text" class="form-control" readonly
+									<input type="text" class="form-control" 
 										value="<?php echo $data['nama_pelanggan']; ?>">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="phone">Phone</label>
-									<input type="text" class="form-control" readonly
+									<input type="text" class="form-control"
 										value="<?php echo $data['nohp_pelanggan']; ?>">
 								</div>
 							</div>
@@ -145,14 +145,20 @@
 	$id_pembelian_barusan = $koneksi->insert_id;
 
 	foreach($_SESSION["cart"] as $id_produk => $jumlah){
-		mysqli_query($koneksi,"INSERT INTO pembelian_produk (id_pembelian,id_produk,jumlah)
-		VALUES ('$id_pembelian_barusan','$id_produk','$jumlah')");
+		$db_produk = mysqli_query($koneksi,"SELECT * FROM produk WHERE id_produk='$id_produk'");
+		$produk = mysqli_fetch_assoc($db_produk);
+
+		$nama_produk = $produk['nama_produk'];
+		$harga_produk = $produk['harga_produk'];
+		$foto_produk = $produk['foto_produk'];
+		mysqli_query($koneksi,"INSERT INTO pembelian_produk (id_pembelian,id_produk,jumlah,nama_produk,foto_produk,harga_produk)
+		VALUES ('$id_pembelian_barusan','$id_produk','$jumlah','$nama_produk','$foto_produk','$harga_produk')");
 	}
 
 	unset($_SESSION["cart"]);
 
 	echo "<script>alert('Succes')</script>";
-	echo "<script>location='index.php?bettaku=nota&id=$id_pembelian_barusan';</script>";
+	echo "<script>location='index.php?bettaku=detail&id=$id_pembelian_barusan';</script>";
 
 	}
  ?>

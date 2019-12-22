@@ -22,7 +22,7 @@
 					<?php while($perproduk = mysqli_fetch_assoc($db)){?>
 						<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate ">
 							<div class="product d-flex flex-column">
-								<a href="#" class="img-prod shop"><img class="img-fluid" src="ls/<?php echo $perproduk['foto_produk'];?>" alt="Colorlib Template">
+								<a href="#" class="img-prod shop"><img class="img-fluid" src="ls/images/<?php echo $perproduk['foto_produk'];?>" alt="Colorlib Template">
 									<div class="overlay"></div>
 								</a>
 								<div class="text py-3 pb-4 px-3">

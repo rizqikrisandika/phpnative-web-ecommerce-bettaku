@@ -1,61 +1,69 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-<body>
+<?php $dbadmin = mysqli_query($koneksi,"SELECT * FROM admin where username_admin='".$_SESSION['admin']."'");
+    $dataadmin = mysqli_fetch_assoc($dbadmin); ?>
 
-            <?php
-                $query = "Select * from kategori";
-                $db = mysqli_query($koneksi, $query);
-            ?>
+<body>
+            <!-- page title area end -->
             <div class="main-content-inner">
                 <div class="row">
-                    <div class="col-lg-6 col-ml-12">
-                        <div class="row">
-                            <!-- Textual inputs start -->
-                            <div class="col-12 mt-5">
-                                <div class="card">
-                                    <div class="card-body">
-                                    <h4 class="header-title">Add Product</h4>
-                                        <form method="post" enctype="multipart/form-data">
-                                            <div class="form-group">
-                                                <label for="example-text-input" class="col-form-label">Name Product</label>
-                                                <input class="form-control" type="text" name="nama" id="example-text-input">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="example-search-input" class="col-form-label">Price</label>
-                                                <input class="form-control" type="number" name="harga" id="example-search-input">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="example-search-input" class="col-form-label">Photo</label>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" name="foto" id="customFile">
-                                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-form-label">Category</label>
-                                                <select class="custom-select" name="kategori">
-                                                    <?php while($data = mysqli_fetch_array($db)): ?>
-                                                        <option value="<?php echo $data['id_kategori']?>">
-                                                            <?php echo $data['nama_kategori']?>
-                                                        </option>
-                                                    <?php endwhile;?>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="example-search-input" class="col-form-label">Desc</label>
-                                                <textarea class="form-control" aria-label="With textarea" name="deskripsi" cols="30" rows="10"></textarea>
-                                            </div>
-                                            <button class="btn btn-primary" name="save">Save</button>
-                                        </form>
-                                    </div>
+                    <div class="col-12 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title">Data Product User</h4>
+                                <div class="data-tables datatable-dark">
+                                    <table id="dataTable3" class="text-center">
+                                        <thead class="text-capitalize">
+                                            <tr>
+                                            <th>No</th>
+                                            <th>Date Time</th>
+                                            <th>User</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Photo</th>
+                                            <th>Category</th>
+                                            <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php 
+                                            $db = mysqli_query($koneksi,"SELECT * from produk 
+                                            join kategori on produk.id_kategori=kategori.id_kategori
+                                             
+                                            join pelanggan on produk.id_pelanggan=pelanggan.id_pelanggan 
+                                            order by produk.tanggal_produk desc");       
+
+                                            $mulai = 0;
+                                            $no =$mulai+1;
+                                            
+                                            while ($produk = mysqli_fetch_assoc($db)) { ?>
+                                                <tr>
+                                                    <td><?php echo $no++ ?></td>
+                                                    <td><?php echo $produk['tanggal_produk'];?></td>
+                                                    <td><?php echo $produk['username_pelanggan'];?></td>
+                                                    <td><?php echo $produk['nama_produk'];?></td>
+                                                    <td>Rp. <?php echo number_format($produk['harga_produk']);?></td>
+                                                    <td>
+                                                        <img src="images/<?php echo $produk['foto_produk'];?>" width="100">
+                                                    </td>
+                                                    <td><?php echo $produk['nama_kategori'];?></td>
+                                                    <td>
+                                                        <a href="index.php?page=delete-product&id=<?php echo $produk['id_produk'];?>" class="btn-danger btn" onclick="javascript: return confirm('Anda yakin hapus produk <?php echo $produk['nama_produk'] ?>?')">Delete</a>
+                                                       
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
+
+            
         </div>
         <!-- main content area end -->
         <!-- footer area start-->
@@ -247,28 +255,3 @@
 </body>
 
 </html>
-
-<?php
-
-    $id_admin = $_GET['id'];
-
-    if(isset($_POST['save']))
-    {
-        if($_FILES['foto']['error']==0){
-            $kategori = $_POST['kategori'];
-            $nama = $_POST['nama'];
-            $harga = $_POST['harga'];
-            $img = $_FILES['foto'];
-            $new_img = 'img_'.date('YmdHis').'.png';
-            $deskripsi = $_POST['deskripsi'];
-            if(copy($img['tmp_name'],"images/".$new_img)){
-
-                mysqli_query($koneksi,"INSERT INTO produk(id_kategori,id_admin,nama_produk,harga_produk,foto_produk,deskripsi_produk)
-                VALUES('$kategori','$id_admin','$nama','$harga','$new_img','$deskripsi')");
-
-                echo "<script>alert('Data telah ditambah')</script>";
-                echo "<script>location='index.php?page=product'</script>";
-            }
-        }
-    }
-?>
