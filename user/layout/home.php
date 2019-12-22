@@ -13,8 +13,16 @@
 								<h1 class="mb-4 mt-3">Betta's Collection 2019</h1>
 								<p class="mb-4">A small river named Duden flows by their place and supplies it with the
 									necessary regelialia. It is a paradisematic country.</p>
+								<p>
 
-								<p><a href="#" class="btn-custom">SIGN UP NOW</a></p>
+									<?php if(isset($_SESSION["pelanggan"])): ?>
+									<a href="index.php?bettaku=shop" class="btn btn-primary">SHOP NOW</a>
+									<?php else: ?>
+									<a href="index.php?bettakuu=signup-user" class="btn btn-primary">SIGN UP NOW</a>
+									<?php endif ?>
+									
+								</p>
+
 							</div>
 						</div>
 					</div>
@@ -33,10 +41,16 @@
 						<div class="text">
 							<div class="horizontal">
 								<h1 class="mb-4 mt-3">New Betta's Collection</h1>
-								<p class="mb-4">A small river named Duden flows by their place and supplies it with the
+								<p class="mb-4">A small river named Duden flows by their place and supplies it with
+									the
 									necessary regelialia. It is a paradisematic country.</p>
-
-								<p><a href="#" class="btn-custom">SIGN UP NOW</a></p>
+								<p>
+									<?php if(isset($_SESSION["pelanggan"])): ?>
+									<a href="index.php?bettaku=shop" class="btn btn-primary">SHOP NOW</a>
+									<?php else: ?>
+									<a href="index.php?bettakuu=signup-user" class="btn btn-primary">SIGN UP NOW</a>
+									<?php endif ?>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -89,6 +103,13 @@
 	</div>
 </section>
 
+<?php
+
+	$db1 = mysqli_query($koneksi,"SELECT * FROM pelanggan where email_pelanggan='".$_SESSION['pelanggan']."'");
+	$data1 = mysqli_fetch_assoc($db1);
+
+?>
+
 <section class="ftco-section bg-light">
 	<div class="container">
 		<div class="row justify-content-center mb-3 pb-3">
@@ -100,11 +121,13 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<?php $db = mysqli_query($koneksi,"SELECT p.id_produk,p.nama_produk,p.harga_produk,p.foto_produk,k.id_kategori,k.nama_kategori from produk p join kategori k on p.id_kategori=k.id_kategori order by p.tanggal_produk desc LIMIT 8");?>
+			<?php $db = mysqli_query($koneksi,"SELECT * from produk join kategori on produk.id_kategori=kategori.id_kategori order by produk.tanggal_produk desc LIMIT 8");?>
 			<?php while($perproduk = mysqli_fetch_assoc($db)){?>
+			<?php if($perproduk['stok_produk']=='1'):?>
 			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate ">
 				<div class="product d-flex flex-column">
-					<a href="#" class="img-prod"><img class="img-fluid" src="ls/images/<?php echo $perproduk['foto_produk'];?>"
+					<a href="index.php?bettaku=productdetail&id=<?php echo $perproduk['id_produk']; ?>"
+						class="img-prod"><img class="img-fluid" src="ls/images/<?php echo $perproduk['foto_produk'];?>"
 							alt="Colorlib Template">
 						<div class="overlay"></div>
 					</a>
@@ -114,19 +137,21 @@
 								<span><?php echo $perproduk['nama_kategori'];?></span>
 							</div>
 						</div>
-						<h3><a href="#"><?php echo $perproduk['nama_produk'];?></a></h3>
+						<h3><a href="index.php?bettaku=productdetail&id=<?php echo $perproduk['id_produk']; ?>"><?php echo $perproduk['nama_produk'];?></a></h3>
 						<div class="pricing">
 							<p class="price"><span>Rp. <?php echo number_format($perproduk['harga_produk']);?></span>
 							</p>
 						</div>
 						<p class="bottom-area d-flex px-3">
 							<?php if(isset($_SESSION["pelanggan"])): ?>
+							<?php if($data1['id_pelanggan']!==$perproduk['id_pelanggan']): ?>
 							<a href="index.php?bettaku=addcarthome&id=<?php echo $perproduk['id_produk']; ?>"
 								class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i
 										class="ion-ios-add ml-1"></i></span></a>
 							<a href="index.php?bettaku=buy&id=<?php echo $perproduk['id_produk']; ?>"
 								class="buy-now text-center py-2">Buy now<span><i
 										class="ion-ios-cart ml-1"></i></span></a>
+							<?php endif?>
 							<?php else: ?>
 							<a href="index.php?bettaku=cartlogin" class="add-to-cart text-center py-2 mr-1"><span>Add to
 									cart <i class="ion-ios-add ml-1"></i></span></a>
@@ -137,6 +162,7 @@
 					</div>
 				</div>
 			</div>
+			<?php endif?>
 			<?php ?>
 			<?php } ?>
 		</div>

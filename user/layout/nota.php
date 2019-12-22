@@ -8,7 +8,7 @@ $detail = mysqli_fetch_assoc($db);
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Detail shopping</span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.php?bettaku=home">Home</a></span> <span><a href="index.php?bettaku=history">Shopping History</a></span></p>
                 <h1 class="mb-0 bread">Detail shopping</h1>
             </div>
         </div>
@@ -18,7 +18,7 @@ $detail = mysqli_fetch_assoc($db);
 <div class="container">
     <div class="card-body">
         <strong>
-            <h4><?php echo $detail['nama_pelanggan'];?></h4>
+            <h4 class="font-weight-bold"><?php echo $detail['nama_pelanggan'];?></h4>
         </strong>
 
         <p>
@@ -41,14 +41,14 @@ $detail = mysqli_fetch_assoc($db);
         <p>
 
             <?php if($detail['status_pembelian']=="Belum bayar" OR $detail['status_pembelian']== "Di batalkan"): ?>
-                <a href="index.php?bettaku=payment&id=<?php echo $detail['id_pembelian']; ?>"style="background: #212529" class="btn btn-primary">Bayar</a>
+                <a href="index.php?bettaku=payment&id=<?php echo $detail['id_pembelian']; ?>" class="btn btn-primary  py-2 px-4">Bayar</a>
             <?php endif ?>
         </p>
         <div class="single-table">
             <div class="table-responsive">
-                <table class="table text-center">
-                    <thead class="text-uppercase bg-dark">
-                        <tr class="text-white">
+                <table class="table">
+                    <thead class="thead-primary">
+                        <tr class="text-center">
                             <th>No</th>
                             <th>Product</th>
                             <th>Photo</th>
@@ -76,7 +76,7 @@ $detail = mysqli_fetch_assoc($db);
                         <?php } ?>
                     </tbody>
                     <tfoot>
-                        <tr>
+                        <tr class="thead-primary">
                             <th colspan="5">Total</th>
                             <th>Rp. <?php echo number_format($detail['total_pembelian']);?></th>
                         </tr>

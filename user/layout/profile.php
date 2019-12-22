@@ -26,15 +26,15 @@
           <div class="justify justify-content-center">
             <div class="bg-white p-5 contact-form">
               <div class="container">
-                <h4 class="text-center">Photo Profile</h4>
+                <h4 class="text-center font-weight-bold">Photo Profile</h4>
                 <br>
                 <?php if($data['foto_pelanggan']==NULL): ?>
                 <div class="vcard bio">
-                  <img src="assets/images/user.png" class="image-responsive" alt="">
+                  <img src="assets/images/user.png" class="img-thumbnail" alt="">
                 </div>
                 <?php else: ?>
                 <div class="vcard bio">
-                  <img src="<?php echo $data['foto_pelanggan'] ?>" class="gallery img d-flex align-items-center" alt="">
+                  <img src="<?php echo $data['foto_pelanggan'] ?>" class="img-thumbnail" alt="">
                 </div>
                 <?php endif ?>
               </div>
@@ -42,7 +42,7 @@
             <hr>
             <div class="bg-white p-5 contact-form">
               <div class="container">
-                <h4 class="text-center">Your Product</h4>
+                <h4 class="text-center font-weight-bold">Your Product</h4>
                 <br>
                 <div class="row">
                   <div class="col-md-6 col-sm-6">

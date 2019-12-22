@@ -13,17 +13,16 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Profile</span></p>
-            <h1 class="mb-0 bread">Profile</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.php?bettaku=home">Home</a></span> <span><a href="index.php?bettaku=profile">Profile</a></span></p>
+            <h1 class="mb-0 bread">Edit Profile</h1>
           </div>
         </div>
       </div>
     </div>
     <br><br><br>
     <div class="container">
-        <div class="card">
+        <div class="">
             <div class="card-body">
-                <h4 class="header-title">Edit Profile</h4>
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="example-text-input" class="col-form-label">Name</label>
@@ -60,7 +59,7 @@
                         <textarea class="form-control" aria-label="With textarea" name="address" cols="30"
                             rows="10"><?php echo $profile['alamat_pelanggan'];?></textarea>
                     </div>
-                    <button class="btn btn-primary" name="save">Save</button>
+                    <button class="btn btn-primary" style="width:150px;height:50px"  name="save">Save</button>
                 </form>
             </div>
         </div>
@@ -91,7 +90,7 @@
               nohp_pelanggan='$phone',alamat_pelanggan='$address' WHERE id_pelanggan='$id_pelanggan");
           }
 
-      echo "<script>alert('Profile has updated')</script>";
+      echo "<script>alert('Profile has been updated')</script>";
       echo "<script>location='index.php?bettaku=profile'</script>";
   }
   

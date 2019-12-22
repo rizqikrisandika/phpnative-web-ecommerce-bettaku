@@ -12,9 +12,9 @@ $db1 = mysqli_query($koneksi, $query);
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Add Product</span>
+                <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span><a href="index.php?bettaku=listproduct">List Product</a></span>
                 </p>
-                <h1 class="mb-0 bread">Add Product</h1>
+                <h1 class="mb-0 bread">Edit Product</h1>
             </div>
         </div>
     </div>
@@ -22,9 +22,9 @@ $db1 = mysqli_query($koneksi, $query);
 <br><br><br>
 
 <div class="container">
-    <div class="card">
+    <div class="">
         <div class="card-body">
-            <h4 class="header-title">Edit Product</h4>
+            <h4 class="header-title font-weight-bold">Edit Product</h4>
             <form method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="example-text-input" class="col-form-label">Name Product</label>
@@ -37,15 +37,16 @@ $db1 = mysqli_query($koneksi, $query);
                         id="example-search-input">
                 </div>
                 <div class="form-group">
-                    <label for="example-search-input" class="col-form-label">Photo</label>
+                    <img src="ls/images/<?php echo $produk['foto_produk'];?>" alt="" width="150">
+                </div>
+                <div class="form-group">
+                    <label for="example-search-input" class="col-form-label">Edit Photo</label>
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" name="foto" id="customFile">
                         <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
                 </div>
-                <div class="form-group">
-                    <img src="<?php echo $produk['foto_produk'];?>" alt="" width="150">
-                </div>
+                
                 <div class="form-group">
                     <label class="col-form-label">Category</label>
                     <select class="custom-select" name="kategori">
@@ -61,7 +62,8 @@ $db1 = mysqli_query($koneksi, $query);
                     <textarea class="form-control" aria-label="With textarea" name="deskripsi" cols="30"
                         rows="10"><?php echo $produk['deskripsi_produk'];?></textarea>
                 </div>
-                <button class="btn btn-primary" name="save">Save</button>
+                <br>
+                <button class="btn btn-primary" style="width:150px;height:50px"  name="save">Save</button>
             </form>
         </div>
     </div>

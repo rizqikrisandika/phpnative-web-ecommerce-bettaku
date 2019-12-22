@@ -1,7 +1,7 @@
 <?php
     if(empty($_SESSION['cart']) OR !isset($_SESSION['cart']))
     {
-       echo "<script>alert('keranjang kosong silahkan belanja :)');</script>";
+       echo "<script>alert('Cart Empty');</script>";
        echo "<script>location='index.php?bettaku=shop';</script>";
     }
 ?>
@@ -12,7 +12,7 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
-					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Cart</span></p>
+					<p class="breadcrumbs"><span class="mr-2"><a href="index.php?bettaku=home">Home</a></span> <span>Cart</span></p>
 					<h1 class="mb-0 bread">My Cart</h1>
 				</div>
 			</div>

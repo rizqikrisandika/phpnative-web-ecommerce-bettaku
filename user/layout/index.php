@@ -66,7 +66,6 @@
 							<?php endif ?>
 						</div>
 					</li>
-					<li class="nav-item"><a href="index.php?bettaku=faq" class="nav-link">Faq</a></li>
 					<?php if(isset($_SESSION["pelanggan"])): ?>
 					<li class="nav-item"><a href="index.php?bettaku=logout" class="nav-link btn-login">Logout</a></li>
 					<?php else: ?>

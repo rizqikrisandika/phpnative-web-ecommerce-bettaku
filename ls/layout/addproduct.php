@@ -263,11 +263,11 @@
             $deskripsi = $_POST['deskripsi'];
             if(copy($img['tmp_name'],"images/".$new_img)){
 
-                mysqli_query($koneksi,"INSERT INTO produk(id_kategori,id_admin,nama_produk,harga_produk,foto_produk,deskripsi_produk)
-                VALUES('$kategori','$id_admin','$nama','$harga','$new_img','$deskripsi')");
+                mysqli_query($koneksi,"INSERT INTO produk(id_kategori,id_admin,nama_produk,harga_produk,foto_produk,deskripsi_produk,stok_produk)
+                VALUES('$kategori','$id_admin','$nama','$harga','$new_img','$deskripsi','1')");
 
                 echo "<script>alert('Data telah ditambah')</script>";
-                echo "<script>location='index.php?page=product'</script>";
+                echo "<script>location='index.php?page=productadmin'</script>";
             }
         }
     }

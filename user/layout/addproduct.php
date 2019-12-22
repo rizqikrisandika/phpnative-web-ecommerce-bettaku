@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Add Product</span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.php?bettaku=home">Home</a></span> <span><a href="index.php?bettaku=profile">Profile</a></span></p>
                     <h1 class="mb-0 bread">Add Product</h1>
                 </div>
             </div>
@@ -24,9 +24,8 @@
     </div>
     <br><br><br>
     <div class="container">
-        <div class="card">
+        <div class="">
             <div class="card-body">
-                <h4 class="header-title">Add Product</h4>
                 <form method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="example-text-input" class="col-form-label">Name Product</label>
@@ -58,7 +57,8 @@
                         <textarea class="form-control" aria-label="With textarea" name="deskripsi" cols="30"
                             rows="10"></textarea>
                     </div>
-                    <button class="btn btn-primary" name="save">Save</button>
+                    <br>
+                    <button class="btn btn-primary" style="width:150px;height:50px" name="save">Save</button>
                 </form>
             </div>
         </div>
@@ -82,8 +82,8 @@
             $deskripsi = $_POST['deskripsi'];
             if(copy($img['tmp_name'],"ls/images/".$new_img)){
 
-                mysqli_query($koneksi,"INSERT INTO produk(id_kategori,id_pelanggan,nama_produk,harga_produk,foto_produk,deskripsi_produk)
-                VALUES('$kategori','$id_pelanggan','$nama','$harga','$new_img','$deskripsi')");
+                mysqli_query($koneksi,"INSERT INTO produk(id_kategori,id_pelanggan,nama_produk,harga_produk,foto_produk,deskripsi_produk,stok_produk)
+                VALUES('$kategori','$id_pelanggan','$nama','$harga','$new_img','$deskripsi','1')");
 
                 echo "<script>alert('Add Product Succes')</script>";
                 echo "<script>location='index.php?bettaku=listproduct'</script>";

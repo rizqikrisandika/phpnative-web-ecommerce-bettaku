@@ -14,12 +14,12 @@
                                             <tr>
                                             <th>No</th>
                                             <th>Date Time</th>
+                                            <th>Photo</th>
                                             <th>Username</th>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Address</th>
-                                            <th>Photo</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -31,13 +31,14 @@
                                             while ($pelanggan = mysqli_fetch_array($db)) { ?>
                                                 <tr>
                                                     <td><?php echo $no++ ?></td>
-                                                    <td><?php echo $pelanggan['tanggal_daftar'];?></td>
+                                                    <td><?php echo $pelanggan['tanggal_daftar'];?></td>   
+                                                    <td><img src="../<?php echo $pelanggan['foto_pelanggan'];?>" width="100"></td>
                                                     <td><?php echo $pelanggan['username_pelanggan'];?></td>
                                                     <td><?php echo $pelanggan['nama_pelanggan'];?></td>
                                                     <td><?php echo $pelanggan['email_pelanggan'];?></td>
                                                     <td><?php echo $pelanggan['nohp_pelanggan'];?></td>
                                                     <td><?php echo $pelanggan['alamat_pelanggan'];?></td>
-                                                    <td><?php echo $pelanggan['foto_pelanggan'];?></td>
+                                                    
                                                 </tr>
                                             <?php } ?>
                                         </tbody>

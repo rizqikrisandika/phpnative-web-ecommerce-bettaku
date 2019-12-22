@@ -32,7 +32,7 @@
 </head>
 
 <div class="limiter">
-		<div class="container-login100" style="background-image: url('assets/form/images/bg-01.jpg');">
+		<div class="container-login100" style="background-image: url('assets/form/images/bg_form2.jpg');">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="index.php?bettakuu=signup" method="post">
 

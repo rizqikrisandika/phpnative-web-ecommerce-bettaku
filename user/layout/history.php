@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-center">
                 <div class="col-md-9 ftco-animate text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Shopping
+                    <p class="breadcrumbs"><span class="mr-2"><a href="index.php?bettaku=home">Home</a></span> <span>Shopping
                             history</span></p>
                     <h1 class="mb-0 bread">Shopping history</h1>
                 </div>
@@ -29,13 +29,13 @@
             <div class="row">
                 <div class="col-lg-12 mt-5">
                     <div class="card-body">
-                        <h4 class="header-title">Shopping history <?php echo $data['nama_pelanggan'] ?></h4>
+                        <h2 class="header-title font-weight-bold"><?php echo $data['nama_pelanggan'] ?></h2>
                         <br><br>
                         <div class="single-table">
                             <div class="table-responsive">
-                                <table class="table text-center">
-                                    <thead class="text-uppercase bg-dark">
-                                        <tr class="text-white">
+                                <table class="table">
+                                    <thead class="thead-primary">
+                                        <tr class="text-center">
                                             <th>No</th>
                                             <th>Date</th>
                                             <th>Total</th>

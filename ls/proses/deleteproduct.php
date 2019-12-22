@@ -12,5 +12,5 @@
     $db = mysqli_query($koneksi,"DELETE FROM produk WHERE id_produk='$_GET[id]'");
 
     echo "<script>alert('Data has been deleted')</script>";
-    echo "<script>location='index.php?page=product'</script>";
+    echo "<script>location='index.php?page=productadmin'</script>";
 ?>

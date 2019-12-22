@@ -153,6 +153,8 @@
 		$foto_produk = $produk['foto_produk'];
 		mysqli_query($koneksi,"INSERT INTO pembelian_produk (id_pembelian,id_produk,jumlah,nama_produk,foto_produk,harga_produk)
 		VALUES ('$id_pembelian_barusan','$id_produk','$jumlah','$nama_produk','$foto_produk','$harga_produk')");
+
+		mysqli_query($koneksi,"UPDATE produk SET stok_produk=stok_produk-$jumlah WHERE id_produk='$id_produk'");
 	}
 
 	unset($_SESSION["cart"]);

@@ -75,6 +75,9 @@
                         case 'editproduct':
                             include "user/layout/editproduct.php";
                             break;
+                        case 'productdetail':
+                            include "user/layout/productdetail.php";
+                            break;
                         default:
                             include "user/layout/404.php";
                             break;

@@ -25,9 +25,9 @@ $pelanggan = mysqli_fetch_assoc($db1);
                   <br><br>
                     <div class="single-table">
                         <div class="table-responsive">
-                            <table id="dataTable3" class="table text-center">
-                                <thead class="text-uppercase bg-dark">
-                                    <tr class="text-white">
+                            <table id="dataTable3" class="table">
+                                <thead class="thead-primary">
+                                    <tr class="text-center">
                                         <th>No</th>
                                         <th>Date Time</th>
                                         <th>Name</th>
