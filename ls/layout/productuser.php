@@ -23,6 +23,7 @@
                                             <th>Price</th>
                                             <th>Photo</th>
                                             <th>Category</th>
+                                            <th>Stock</th>
                                             <th>Action</th>
                                             </tr>
                                         </thead>
@@ -48,6 +49,7 @@
                                                         <img src="images/<?php echo $produk['foto_produk'];?>" width="100">
                                                     </td>
                                                     <td><?php echo $produk['nama_kategori'];?></td>
+                                                    <td><?php echo $produk['stok_produk'];?></td>
                                                     <td>
                                                         <a href="index.php?page=delete-product&id=<?php echo $produk['id_produk'];?>" class="btn-danger btn" onclick="javascript: return confirm('Anda yakin hapus produk <?php echo $produk['nama_produk'] ?>?')">Delete</a>
                                                        

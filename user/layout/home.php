@@ -104,11 +104,14 @@
 </section>
 
 <?php
-
+ if(isset($_SESSION['pelanggan'])){
 	$db1 = mysqli_query($koneksi,"SELECT * FROM pelanggan where email_pelanggan='".$_SESSION['pelanggan']."'");
 	$data1 = mysqli_fetch_assoc($db1);
+ }
 
 ?>
+
+
 
 <section class="ftco-section bg-light">
 	<div class="container">
@@ -121,9 +124,15 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<?php $db = mysqli_query($koneksi,"SELECT * from produk join kategori on produk.id_kategori=kategori.id_kategori order by produk.tanggal_produk desc LIMIT 8");?>
+
+			<?php 
+			
+			$db = mysqli_query($koneksi,"SELECT * from produk 
+			join kategori on produk.id_kategori=kategori.id_kategori where stok_produk='1'
+			order by tanggal_produk desc limit 8");?>
+
 			<?php while($perproduk = mysqli_fetch_assoc($db)){?>
-			<?php if($perproduk['stok_produk']=='1'):?>
+			
 			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate ">
 				<div class="product d-flex flex-column">
 					<a href="index.php?bettaku=productdetail&id=<?php echo $perproduk['id_produk']; ?>"
@@ -162,73 +171,10 @@
 					</div>
 				</div>
 			</div>
-			<?php endif?>
+			
 			<?php ?>
 			<?php } ?>
 		</div>
 	</div>
 </section>
 
-<section class="ftco-gallery">
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-8 heading-section text-center mb-4 ftco-animate">
-				<h2 class="mb-4">Follow Us On Instagram</h2>
-				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-					the blind texts. Separated they live in</p>
-			</div>
-		</div>
-	</div>
-	<div class="container-fluid px-0">
-		<div class="row no-gutters">
-			<div class="col-md-4 col-lg-2 ftco-animate">
-				<a href="assets/images/gallery-1.jpg" class="gallery image-popup img d-flex align-items-center"
-					style="background-image: url(assets/images/gallery-1.jpg);">
-					<div class="icon mb-4 d-flex align-items-center justify-content-center">
-						<span class="icon-instagram"></span>
-					</div>
-				</a>
-			</div>
-			<div class="col-md-4 col-lg-2 ftco-animate">
-				<a href="assets/images/gallery-2.jpg" class="gallery image-popup img d-flex align-items-center"
-					style="background-image: url(assets/images/gallery-2.jpg);">
-					<div class="icon mb-4 d-flex align-items-center justify-content-center">
-						<span class="icon-instagram"></span>
-					</div>
-				</a>
-			</div>
-			<div class="col-md-4 col-lg-2 ftco-animate">
-				<a href="assets/images/gallery-3.jpg" class="gallery image-popup img d-flex align-items-center"
-					style="background-image: url(assets/images/gallery-3.jpg);">
-					<div class="icon mb-4 d-flex align-items-center justify-content-center">
-						<span class="icon-instagram"></span>
-					</div>
-				</a>
-			</div>
-			<div class="col-md-4 col-lg-2 ftco-animate">
-				<a href="assets/images/gallery-4.jpg" class="gallery image-popup img d-flex align-items-center"
-					style="background-image: url(assets/images/gallery-4.jpg);">
-					<div class="icon mb-4 d-flex align-items-center justify-content-center">
-						<span class="icon-instagram"></span>
-					</div>
-				</a>
-			</div>
-			<div class="col-md-4 col-lg-2 ftco-animate">
-				<a href="assets/images/gallery-5.jpg" class="gallery image-popup img d-flex align-items-center"
-					style="background-image: url(assets/images/gallery-5.jpg);">
-					<div class="icon mb-4 d-flex align-items-center justify-content-center">
-						<span class="icon-instagram"></span>
-					</div>
-				</a>
-			</div>
-			<div class="col-md-4 col-lg-2 ftco-animate">
-				<a href="assets/images/gallery-6.jpg" class="gallery image-popup img d-flex align-items-center"
-					style="background-image: url(assets/images/gallery-6.jpg);">
-					<div class="icon mb-4 d-flex align-items-center justify-content-center">
-						<span class="icon-instagram"></span>
-					</div>
-				</a>
-			</div>
-		</div>
-	</div>
-</section>

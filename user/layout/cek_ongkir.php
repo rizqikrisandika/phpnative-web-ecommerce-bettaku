@@ -39,8 +39,8 @@
 
 	<div title="<?php echo strtoupper($data['rajaongkir']['results'][$k]['name']);?>" style="padding:10px">
 		<table class="table text-center">
-			<thead class="text-uppercase bg-dark">
-				<tr class="text-white">
+			<thead class="thead-primary">
+				<tr class="text-center">
 					<th>No.</th>
 					<th>Jenis Layanan</th>
 					<th>ETD</th>
@@ -49,8 +49,8 @@
 			</thead>
 			<tbody>
 				<?php
-												for ($l=0; $l < count($data['rajaongkir']['results'][$k]['costs']); $l++) {
-											?>
+					for ($l=0; $l < count($data['rajaongkir']['results'][$k]['costs']); $l++) {
+				?>
 
 				<tr>
 					<td><?php echo $l+1;?></td>

@@ -24,7 +24,7 @@
                                             <th>Price</th>
                                             <th>Photo</th>
                                             <th>Category</th>
-                                            <th>Stok</th>
+                                            <th>Stock</th>
                                             <th>Action</th>
                                             </tr>
                                         </thead>
