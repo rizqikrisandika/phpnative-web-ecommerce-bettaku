@@ -11,5 +11,5 @@
         $_SESSION['cart'][$id_produk]=1;
     }
 
-    header('location:index.php?bettaku=cart');
+    echo "<script>location='index.php?bettaku=cart'</script>";
 ?>
