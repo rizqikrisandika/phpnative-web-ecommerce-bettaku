@@ -10,8 +10,17 @@
                             include "user/layout/profile.php";
                             break;
                         case 'diagnosa':
-                            include "user/layout/diagnosa.php";
+                            include "user/layout/diagnosa/diagnosa.php";
                             break;
+                        case 'tentang':
+                            include "user/layout/diagnosa/home.html";
+                            break;
+                        case 'enfj':
+                            include "user/layout/diagnosa/enfj.html";
+                            break;
+                            case 'entj':
+                                include "user/layout/diagnosa/entj.html";
+                                break;
                         case 'shop':
                             include "user/layout/shop.php";
                             break;	

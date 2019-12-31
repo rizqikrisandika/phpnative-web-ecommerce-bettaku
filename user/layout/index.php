@@ -21,6 +21,10 @@
 
 	<link rel="stylesheet" href="assets/css/aos.css">
 
+	<link href="diagnosa/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="diagnosa/css/bootstrap.min.css">
+	<link href="diagnosa/css/scrolling-nav.css" rel="stylesheet">
+	
 	<link rel="stylesheet" href="assets/css/ionicons.min.css">
 
 	<link rel="stylesheet" href="assets/css/bootstrap-datepicker.css">
@@ -50,7 +54,12 @@
 					<?php if(isset($_SESSION["pelanggan"])): ?>
 					<li class="nav-item"><a href="index.php?bettaku=profile" class="nav-link">Profile</a></li>
 					<?php endif ?>
-					<li class="nav-item"><a href="index.php?bettaku=diagnosa" class="nav-link">Diagnosa</a></li>
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Diagnosa</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="index.php?bettaku=tentang">Tentang</a>
+							<a class="dropdown-item" href="index.php?bettaku=diagnosa">Ambil Tes</a>
+						</div></li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">Catalog</a>
@@ -261,6 +270,18 @@
 			$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 		});
 	</script>
+
+	
+
+          <!-- Bootstrap core JavaScript -->
+          <script src="diagnosa/vendor/jquery/jquery.min.js"></script>
+          <script src="/diagnosavendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      
+          <!-- Plugin JavaScript -->
+          <script src="diagnosa/vendor/jquery-easing/jquery.easing.min.js"></script>
+      
+          <!-- Custom JavaScript for this theme -->
+          <script src="diagnosa/js/scrolling-nav.js"></script>
 
 
 
