@@ -21,9 +21,12 @@
 
 	<link rel="stylesheet" href="assets/css/aos.css">
 
-	<link href="diagnosa/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="diagnosa/css/bootstrap.min.css">
-	<link href="diagnosa/css/scrolling-nav.css" rel="stylesheet">
+	
+    <!-- Bootstrap core CSS -->
+    <link href="diagnosa/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="diagnosa/css/justified-nav.css" rel="stylesheet">
 	
 	<link rel="stylesheet" href="assets/css/ionicons.min.css">
 
@@ -57,8 +60,8 @@
 					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">Diagnosa</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="index.php?bettaku=tentang">Tentang</a>
-							<a class="dropdown-item" href="index.php?bettaku=diagnosa">Ambil Tes</a>
+							<a class="dropdown-item" href="index.php?bettaku=diag#tentang">Tentang</a>
+							<a class="dropdown-item" href="index.php?bettaku=diag#ambiltes">Ambil Tes</a>
 						</div></li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
@@ -273,17 +276,10 @@
 
 	
 
-          <!-- Bootstrap core JavaScript -->
-          <script src="diagnosa/vendor/jquery/jquery.min.js"></script>
-          <script src="/diagnosavendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      
-          <!-- Plugin JavaScript -->
-          <script src="diagnosa/vendor/jquery-easing/jquery.easing.min.js"></script>
-      
-          <!-- Custom JavaScript for this theme -->
-          <script src="diagnosa/js/scrolling-nav.js"></script>
 
-
+		  <script src="diagnosa/js/popper.min.js"></script>
+    <script src="diagnosa/js/jquery-slim.min.js"></script>
+    <script src="diagnosa/js/bootstrap.min.js"></script>
 
 
 </body>

@@ -9,18 +9,24 @@
                         case 'profile':
                             include "user/layout/profile.php";
                             break;
+                        case 'diag':
+                            include "user/layout/diagnosa/home.html";
+                            break;
                         case 'diagnosa':
                             include "user/layout/diagnosa/diagnosa.php";
                             break;
-                        case 'tentang':
-                            include "user/layout/diagnosa/home.html";
+                        case 'cetak':
+                            include "user/layout/diagnosa/cetak-hasil.php";
                             break;
-                        case 'enfj':
-                            include "user/layout/diagnosa/enfj.html";
+                        case 'hasil':
+                            include "user/layout/diagnosa/hasil.php";
                             break;
-                            case 'entj':
-                                include "user/layout/diagnosa/entj.html";
-                                break;
+                        case 'daftar':
+                            include "user/layout/diagnosa/daftar.php";
+                            break;
+                        case 'deskripsi':
+                            include "user/layout/diagnosa/deskripsi.php";
+                            break;
                         case 'shop':
                             include "user/layout/shop.php";
                             break;	
