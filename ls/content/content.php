@@ -71,7 +71,7 @@
                             break;
                         case 'purchase-payment':
                             include "layout/purchasepayment.php";
-                            break;					
+                            break;
                         default:
                             include "layout/404.php";
                             break;

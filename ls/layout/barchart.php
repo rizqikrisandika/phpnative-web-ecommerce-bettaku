@@ -6,45 +6,21 @@
                     <div class="col-lg-6 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <div id="ambarchart1"></div>
+                            <h4 class="header-title">Chart Category Product</h4>
+                                <img src="layout/chart_category.php" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-6 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <div id="ambarchart2"></div>
+                            <h4 class="header-title">Chart Category Product</h4>
+                                <img src="layout/chart_category.php" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <div id="ambarchart3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <div id="ambarchart4"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <div id="ambarchart5"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <div id="ambarchart6"></div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 <!-- bar chart end -->
             </div>

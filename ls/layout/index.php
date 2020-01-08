@@ -71,8 +71,6 @@
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-pie-chart"></i><span>Charts</span></a>
                                 <ul class="collapse">
                                     <li><a href="index.php?page=barchart">bar chart</a></li>
-                                    <li><a href="index.php?page=linechart">line Chart</a></li>
-                                    <li><a href="index.php?page=piechart">pie chart</a></li>
                                 </ul>
                             </li>
                             <li>
