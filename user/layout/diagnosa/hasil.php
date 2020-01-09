@@ -1,4 +1,4 @@
-<?php include "conn.php"; ?>
+
 
 <body class="goto-here">
 	<!-- END nav -->
@@ -7,6 +7,8 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.php?bettaku=home">Home</a></span> <span>DIAGNOSA</span></p>
+                    <h1 class="mb-0 bread">DIAGNOSA</h1>
 				</div>
 			</div>
 		</div>
@@ -15,15 +17,12 @@
 	<section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-2 col-lg-2">
-					
-				</div>
 				
-				<div class="col-md-8 col-lg-8 order-md-last">
+				<div class="col-md-12 col-lg-12 order-md-last">
 					<div class="row">
 						
 						<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate ">
-              <h2>Hasil Diagnosa</h2>
+            <h2 class="mb-4 font-weight-bold">Result</h2>
               <?php  
                 if(isset($_POST['proses']))  
                 {    

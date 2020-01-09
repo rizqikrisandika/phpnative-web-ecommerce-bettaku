@@ -15,11 +15,12 @@
                     <div class="col-lg-6 mt-5">
                         <div class="card">
                             <div class="card-body">
-                            <h4 class="header-title">Chart Category Product</h4>
-                                <img src="layout/chart_category.php" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+                            <h4 class="header-title">Chart Purchasing</h4>
+                                <img src="layout/chart_pembelian.php" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
                             </div>
                         </div>
                     </div>
+
                     
                 </div>
                 <!-- bar chart end -->

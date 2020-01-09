@@ -10,7 +10,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+    </div>
+    
+
 
 	<section class="ftco-section bg-light">
 		<div class="container">
@@ -31,7 +33,9 @@
 							</div>
 						</div>
 					</div>
-				</div>
+                </div>
+                
+                <?php $id_kategori = $_GET['id']; ?>
 				<?php 
 					if(isset($_SESSION['pelanggan'])){
 						$db = mysqli_query($koneksi,"SELECT * FROM pelanggan where email_pelanggan='".$_SESSION['pelanggan']."'");
@@ -40,7 +44,7 @@
 				?>
 				<div class="col-md-8 col-lg-10 order-md-last">
 					<div class="row">
-						<?php $db1 = mysqli_query($koneksi,"SELECT * from produk join kategori on produk.id_kategori=kategori.id_kategori order by produk.tanggal_produk desc");?>
+						<?php $db1 = mysqli_query($koneksi,"SELECT * from produk join kategori on produk.id_kategori=kategori.id_kategori where produk.id_kategori=$id_kategori order by produk.tanggal_produk desc");?>
 						<?php while($perproduk = mysqli_fetch_assoc($db1)){?>
 
 						<?php if($perproduk['stok_produk']=='1'):?>

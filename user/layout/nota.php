@@ -39,6 +39,10 @@ $detail = mysqli_fetch_assoc($db);
         </p>
 
         <p>
+            Alamat Pengiriman : <?php echo $detail['alamat_pembelian'];?>
+        </p>
+
+        <p>
 
             <?php if($detail['status_pembelian']=="Belum bayar" OR $detail['status_pembelian']== "Di batalkan"): ?>
                 <a href="index.php?bettaku=payment&id=<?php echo $detail['id_pembelian']; ?>" class="btn btn-primary  py-2 px-4">Bayar</a>

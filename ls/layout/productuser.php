@@ -51,7 +51,7 @@
                                                     <td><?php echo $produk['nama_kategori'];?></td>
                                                     <td><?php echo $produk['stok_produk'];?></td>
                                                     <td>
-                                                        <a href="index.php?page=delete-product&id=<?php echo $produk['id_produk'];?>" class="btn-danger btn" onclick="javascript: return confirm('Anda yakin hapus produk <?php echo $produk['nama_produk'] ?>?')">Delete</a>
+                                                        <a href="index.php?page=delete-product2&id=<?php echo $produk['id_produk'];?>" class="btn-danger btn" onclick="javascript: return confirm('Anda yakin hapus produk <?php echo $produk['nama_produk'] ?>?')">Delete</a>
                                                        
                                                     </td>
                                                 </tr>

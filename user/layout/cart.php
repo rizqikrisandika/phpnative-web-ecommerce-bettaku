@@ -1,10 +1,4 @@
-<?php
-    if(empty($_SESSION['cart']) OR !isset($_SESSION['cart']))
-    {
-       echo "<script>alert('Cart Empty');</script>";
-       echo "<script>location='index.php?bettaku=shop';</script>";
-    }
-?>
+
 
 <body class="goto-here">
 
@@ -37,6 +31,7 @@
 								</tr>
 							</thead>
 							<tbody>
+							<?php if(isset($_SESSION['cart'])) { ?>
 								<?php $totalbelanja = 0;
 							$mulai = 0;
 							$no =$mulai+1; ?>
@@ -69,10 +64,12 @@
 										</div>
 									</td>
 
+
 									<td class="total">Rp. <?php echo number_format($subsharga) ;?></td>
 									<?php 
 								$totalbelanja+=$subsharga; ?>
 									<?php endforeach ?>
+									<?php } ?>
 							</tbody>
 						</table>
 					</div>
@@ -85,7 +82,9 @@
 						<hr>
 						<p class="d-flex total-price">
 							<span>Total</span>
+							<?php if(isset($_SESSION['cart'])) { ?>
 							<span>Rp. <?php echo number_format($totalbelanja) ;?></span>
+							<?php } ?>
 						</p>
 					</div>
 					<p class="text-center"><a href="index.php?bettaku=checkout"
@@ -94,5 +93,6 @@
 			</div>
 		</div>
 	</section>
+
 
 </body>

@@ -1,5 +1,4 @@
 
-<?php include "conn.php"; ?>
 
 <body class="goto-here">
 	<!-- END nav -->
@@ -8,6 +7,8 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.php?bettaku=home">Home</a></span> <span>DIAGNOSA</span></p>
+                    <h1 class="mb-0 bread">DIAGNOSA</h1>
 				</div>
 			</div>
 		</div>
@@ -21,7 +22,6 @@
 					<div class="row">
 						
 						<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate ">
-            <h2>Daftar Penyakit Ikan Cupang</h2>
             <table class="table table-bordered table-hover">
               <tr>
                       <th><center>NO</center></th>

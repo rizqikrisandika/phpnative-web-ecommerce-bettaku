@@ -1,6 +1,4 @@
 
-<?php include "conn.php"; ?>
-
 <body class="goto-here">
 	<!-- END nav -->
 
@@ -8,6 +6,8 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
+				<p class="breadcrumbs"><span class="mr-2"><a href="index.php?bettaku=home">Home</a></span> <span>DIAGNOSA</span></p>
+                    <h1 class="mb-0 bread">DIAGNOSA</h1>
 				</div>
 			</div>
 		</div>
@@ -24,7 +24,6 @@
 					<div class="row">
 						
 						<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate ">
-            <h2>Diagnosa</h2>
             <?php if (isset($_GET['error'])) {echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
               <span aria-hidden='true'>&times;</span>
@@ -41,7 +40,7 @@
             ?>
             <?php echo $no; ?>.    <input type="checkbox" value="<?php echo $data['kd_gejala'];?>" name="cek[]" /> <?php echo $data['gejala']; ?><br />
             <?php }?><br />
-            <input type="submit" class="btn btn-medium btn-primary" value="Cek Diagnosa" name="proses" />
+            <input type="submit" class="btn btn-medium btn-primary" value="Check" name="proses" />
             </form>
 						</div>
 					</div>

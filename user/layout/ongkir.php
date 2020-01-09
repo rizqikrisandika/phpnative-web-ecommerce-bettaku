@@ -129,7 +129,7 @@ $(document).ready(function(){
 
           $.ajax({
             type : 'GET',
-               url : 'http://localhost:8080/projectweb/Bettaku_git/user/layout/cek_kabupaten.php',
+               url : 'http://localhost:80/Bettakunew/user/layout/cek_kabupaten.php',
             data :  'prov_id=' + prov,
                 success: function (data) {
 
@@ -148,7 +148,7 @@ $(document).ready(function(){
 
           $.ajax({
             type : 'POST',
-               url : 'http://localhost:8080/projectweb/Bettaku_git/user/layout/cek_ongkir.php',
+               url : 'http://localhost:80/Bettakunew/user/layout/cek_ongkir.php',
             data :  {'kab_id' : kab, 'kurir' : kurir, 'asal' : asal, 'berat' : berat},
                 success: function (data) {
 

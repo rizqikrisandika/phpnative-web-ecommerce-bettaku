@@ -60,6 +60,9 @@
                         case 'delete-product':
                             include "proses/deleteproduct.php";
                             break;
+                        case 'delete-product2':
+                            include "proses/deleteproduct2.php";
+                            break;
                         case 'category':
                             include "layout/category.php";
                             break;

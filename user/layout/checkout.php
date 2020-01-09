@@ -90,25 +90,11 @@
 				<div class="col-xl-10 ftco-animate">
 					<form method="POST" class="billing-form">
 						<h3 class="mb-4 billing-heading">Billing Details</h3>
-						<div class="row align-items-end">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="firstname">Name</label>
-									<input type="text" class="form-control" 
-										value="<?php echo $data['nama_pelanggan']; ?>">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="phone">Phone</label>
-									<input type="text" class="form-control"
-										value="<?php echo $data['nohp_pelanggan']; ?>">
-								</div>
-							</div>
+				
 							<div class="col-md-12">
 								<div class="form-group">
 									<label for="streetaddress">Street Address</label>
-									<textarea class="form-control" name="" id="" cols="30"
+									<textarea class="form-control" name="alamat" id="" cols="30"
 										rows="10"><?php echo $data['alamat_pelanggan']; ?></textarea>
 								</div>
 							</div>
@@ -138,9 +124,10 @@
 	if(isset($_POST["checkout"])){
 	$id_pelanggan = $data['id_pelanggan'];
 	$total_pembelian = $totalbelanja;
+	$alamat_pembelian = $_POST['alamat'];
 	
-	mysqli_query($koneksi,"INSERT INTO pembelian(id_pelanggan,total_pembelian)
-	VALUES ('$id_pelanggan','$total_pembelian')");
+	mysqli_query($koneksi,"INSERT INTO pembelian(id_pelanggan,total_pembelian,alamat_pembelian)
+	VALUES ('$id_pelanggan','$total_pembelian','$alamat_pembelian')");
 
 	$id_pembelian_barusan = $koneksi->insert_id;
 

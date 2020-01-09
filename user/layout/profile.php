@@ -83,7 +83,7 @@
             <div class="form-group">
               <label for="">Address</label>
               <textarea name="" id="" cols="30" rows="7" readonly class="form-control"
-                placeholder="Message"><?php echo $data['alamat_pelanggan'] ?></textarea>
+                placeholder="Address"><?php echo $data['alamat_pelanggan'] ?></textarea>
             </div>
             <div class="form-group">
               <a href="index.php?bettaku=editprofile&id=<?php echo $data['id_pelanggan'] ?>" name="editprofile"

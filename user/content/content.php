@@ -29,7 +29,10 @@
                             break;
                         case 'shop':
                             include "user/layout/shop.php";
-                            break;	
+                            break;
+                        case 'shop-sort':
+                            include "user/layout/shop-sort.php";
+                            break;
                         case 'cart':
                             include "user/layout/cart.php";
                             break;

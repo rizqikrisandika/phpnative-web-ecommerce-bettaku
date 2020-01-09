@@ -60,8 +60,8 @@
 					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">Diagnosa</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="index.php?bettaku=diag#tentang">Tentang</a>
-							<a class="dropdown-item" href="index.php?bettaku=diag#ambiltes">Ambil Tes</a>
+							<a class="dropdown-item" href="index.php?bettaku=diag#tentang">About</a>
+							<a class="dropdown-item" href="index.php?bettaku=diag#ambiltes">Check</a>
 						</div></li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
